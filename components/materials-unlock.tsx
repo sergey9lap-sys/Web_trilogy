@@ -97,7 +97,7 @@ export function MaterialsUnlock() {
                   </p>
                   <h2 className="mt-3 text-3xl text-bone">{item.title}</h2>
                 </div>
-                <span className="rounded-full border border-brass/40 px-3 py-1 text-sm text-brass">
+                <span className="flex min-w-[3.75rem] items-center justify-center whitespace-nowrap rounded-full border border-brass/40 px-3 py-1 text-sm text-brass">
                   {item.date}
                 </span>
               </div>
