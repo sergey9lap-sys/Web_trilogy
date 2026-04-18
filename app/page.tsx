@@ -38,9 +38,18 @@ export default function Home() {
                 Служба заботы
               </a>
             </nav>
-            <ButtonLink href="#registration" variant="secondary">
-              Зарегистрироваться
-            </ButtonLink>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <ButtonLink
+                className="hidden sm:inline-flex"
+                href="/materials"
+                variant="light"
+              >
+                Получить материалы
+              </ButtonLink>
+              <ButtonLink href="#registration">
+                Зарегистрироваться
+              </ButtonLink>
+            </div>
           </header>
 
           <div className="grid flex-1 items-center gap-10 pb-12 pt-16 lg:grid-cols-[1.08fr_0.92fr] lg:pt-20">

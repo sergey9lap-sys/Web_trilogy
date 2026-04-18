@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 type ButtonLinkProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "light" | "ghost";
   className?: string;
 };
 
@@ -22,6 +22,8 @@ export function ButtonLink({
           "bg-bordeaux text-bone shadow-ember hover:bg-carmine",
         variant === "secondary" &&
           "border border-brass/60 bg-cacao/30 text-bone hover:border-brass hover:bg-brass/10",
+        variant === "light" &&
+          "bg-bone text-cacao shadow-[0_0_34px_rgba(240,230,203,0.16)] hover:bg-brass hover:text-cacao",
         variant === "ghost" && "text-brass hover:text-bone",
         className,
       )}
