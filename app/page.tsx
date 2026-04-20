@@ -12,8 +12,8 @@ export default function Home() {
     <main className="overflow-hidden">
       <section className="relative min-h-[760px] bg-cinema-radial lg:min-h-[860px]">
         <LightLeak
-          blur={6}
-          className="left-[-6%] top-[12%] h-[70%] w-[42%]"
+          blur={2}
+          className="left-[-6%] top-[12%] h-[86%] w-[50%] object-cover object-left-center"
           delay={260}
           mask="right"
           opacity={0.36}
@@ -62,6 +62,9 @@ export default function Home() {
                 Соберите запуск как систему — а не как набор разрозненных
                 действий
               </p>
+              <p className="mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass">
+                Вы перестаёте надеяться на продажи — начинаете ими управлять
+              </p>
               <p className="mt-6 max-w-2xl text-xl leading-8 text-bone/80">
                 3-дневная трилогия, в которой вы собираете продукт, продажи и
                 масштабирование в цельную систему, открывая рабочие материалы
@@ -103,10 +106,10 @@ export default function Home() {
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28" id="format">
         <LightLeak
           baseTransform="rotate(8deg)"
-          blur={4}
-          className="right-[-5%] top-[12%] h-[78%] w-[30%]"
+          blur={2}
+          className="right-[-5%] top-[12%] h-[78%] w-[30%] brightness-105 contrast-110"
           mask="left"
-          opacity={0.58}
+          opacity={0.62}
           parallaxX={4}
           parallaxY={8}
           src="/background/2 блок.jpg"
@@ -117,11 +120,12 @@ export default function Home() {
             title="Люди устали смотреть эфиры и складывать материалы “на потом”"
             text="Информации стало слишком много. Обычный вебинар легко потерять среди вкладок, а скачанная рабочая тетрадь часто так и остаётся нетронутой."
           />
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {[
               "Скачали → не внедрили",
               "Досмотрели → не собрали результат",
               "Поняли → не сделали",
+              "Смотрели — не значит сделали",
             ].map((item) => (
               <div
                 className="premium-hover flex min-h-28 items-center rounded-lg border border-brass/20 bg-obsidian/40 p-5 text-lg font-semibold leading-6 text-bone/86"
@@ -162,7 +166,7 @@ export default function Home() {
               Что внутри
             </p>
             <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
-              Три дня, чтобы собрать запуск как систему
+              Три дня, за которые вы собираете продукт, продажи и масштаб в одну систему
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -182,7 +186,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-gradient-to-b from-cacao via-bordeaux/40 to-cacao py-20 sm:py-28" id="program">
         <LightLeak
-          blur={5}
+          blur={2}
           className="inset-x-0 top-[-10%] h-[120%] w-full mix-blend-screen brightness-110 contrast-110"
           mask="both"
           opacity={0.42}
@@ -195,6 +199,9 @@ export default function Home() {
             title="Вы не просто слушаете. Вы собираете запуск по частям."
             text="На каждом эфире появляется кодовое слово. Вы вводите его на странице материалов и открываете следующий шаг запуска: рабочий файл, схему или ссылку для внедрения."
           />
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-semibold leading-7 text-brass">
+            Каждый эфир — шаг к результату, а не к “пониманию”
+          </p>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {program.map((item) => (
               <ActCard key={item.act} {...item} />
@@ -292,8 +299,8 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28" id="artifacts">
         <LightLeak
-          blur={7}
-          className="left-[-8%] top-[-12%] h-[70%] w-[48%] brightness-110 contrast-110"
+          blur={2}
+          className="left-[-8%] top-[-8%] h-[112%] w-[58%] object-contain object-left-top brightness-110 contrast-110"
           mask="right"
           opacity={0.35}
           parallaxX={4}
@@ -307,6 +314,9 @@ export default function Home() {
               title="Материалы появляются тогда, когда они реально нужны"
               text="Вы не получаете всё сразу и не складываете это в папку “посмотреть потом”. На каждом эфире открывается следующий артефакт — и вы сразу понимаете, куда его применить."
             />
+            <p className="mt-6 text-lg font-semibold leading-7 text-brass">
+              Вы внедряете, а не откладываете
+            </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {[
                 "Подключаетесь к эфиру",
@@ -341,11 +351,16 @@ export default function Home() {
           src="/background/11 блок.jpg"
         />
         <Reveal className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <SectionHeading
-            eyebrow="Почему в прямом эфире"
-            title="Самое ценное происходит не в скачанной папке, а в моменте"
-            text="Когда материал открывается во время эфира, у него появляется контекст. Вы сразу понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
-          />
+          <div>
+            <SectionHeading
+              eyebrow="Почему в прямом эфире"
+              title="Самое ценное происходит не в скачанной папке, а в моменте"
+              text="Когда материал открывается во время эфира, у него появляется контекст. Вы сразу понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
+            />
+            <p className="mt-6 text-lg font-semibold leading-7 text-brass">
+              Результат появляется в моменте, а не “когда-нибудь потом”
+            </p>
+          </div>
           <div className="soft-panel rounded-lg p-6">
             <div className="grid gap-5">
               {[
@@ -408,8 +423,8 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28">
         <LightLeak
-          blur={8}
-          className="inset-x-0 top-[-18%] mx-auto h-[138%] w-[82%]"
+          blur={2}
+          className="right-[-6%] top-[-40%] h-[138%] w-[82%]"
           mask="center"
           opacity={0.2}
           parallaxX={0}
@@ -429,8 +444,17 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section className="bg-cinema-radial py-20 sm:py-28">
-        <div className="section-shell text-center">
+      <section className="relative overflow-hidden bg-cinema-radial py-20 sm:py-28">
+        <LightLeak
+          blur={2}
+          className="inset-x-0 top-[-18%] mx-auto h-[138%] w-[82%]"
+          mask="center"
+          opacity={0.2}
+          parallaxX={0}
+          parallaxY={0}
+          src="/background/14 блок.jpg"
+        />
+        <div className="section-shell relative z-10 text-center">
           <p className="eyebrow">Финальный вызов</p>
           <h2 className="mx-auto mt-4 max-w-3xl text-5xl leading-[0.94] text-bone sm:text-6xl">
             Соберите запуск как систему — а не как набор случайных действий
@@ -438,6 +462,9 @@ export default function Home() {
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-bone/76">
             3 эфира. 3 артефакта. 3 этапа, которые собираются в одну цельную
             логику запуска.
+          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass">
+            Вы уходите не с идеями — а с готовым запуском
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <ButtonLink href="#registration">Зарегистрироваться</ButtonLink>

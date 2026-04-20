@@ -21,6 +21,9 @@ export function GetCourseEmbedPlaceholder() {
           Телефон или почта
         </div>
       </div>
+      <p className="mt-5 text-sm font-semibold leading-6 text-brass">
+        Разница между “знаю” и “зарабатываю” — это система
+      </p>
       <a
         className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-md bg-bordeaux px-5 py-3 text-sm font-semibold text-bone shadow-ember transition hover:bg-carmine"
         href="/thanks"

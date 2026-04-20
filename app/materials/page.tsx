@@ -6,9 +6,9 @@ export default function MaterialsPage() {
     <main className="min-h-screen bg-cacao">
       <section className="relative overflow-hidden bg-cinema-radial py-16 sm:py-24">
         <LightLeak
-          baseTransform="scale(1.15) rotate(1deg)"
-          blur={4}
-          className="right-[-12%] top-[-8%] h-[118%] w-[52%] saturate-105 brightness-110 contrast-[1.15]"
+          baseTransform="scale(1.02) rotate(1deg)"
+          blur={2}
+          className="right-[-6%] top-[0%] h-[100%] w-[42%] object-contain object-right-bottom saturate-105 brightness-110 contrast-[1.15]"
           mask="left"
           opacity={0.52}
           parallaxY={6}

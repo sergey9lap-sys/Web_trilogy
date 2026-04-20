@@ -3,10 +3,18 @@ type ActCardProps = {
   date: string;
   title: string;
   text: string;
+  anchor: string;
   artifact: string;
 };
 
-export function ActCard({ act, date, title, text, artifact }: ActCardProps) {
+export function ActCard({
+  act,
+  date,
+  title,
+  text,
+  anchor,
+  artifact,
+}: ActCardProps) {
   return (
     <article className="soft-panel premium-hover rounded-lg p-6">
       <div className="flex items-start justify-between gap-5">
@@ -21,6 +29,9 @@ export function ActCard({ act, date, title, text, artifact }: ActCardProps) {
         </span>
       </div>
       <p className="mt-5 text-sm leading-6 text-bone/70">{text}</p>
+      <p className="mt-4 text-sm font-semibold leading-6 text-brass">
+        {anchor}
+      </p>
       <div className="mt-7 border-t border-brass/20 pt-5">
         <p className="text-xs uppercase tracking-[0.18em] text-bone/50">
           Артефакт
