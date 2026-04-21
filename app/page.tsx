@@ -219,8 +219,8 @@ export default function Home() {
           }
           key={item.act}
         >
-          <div className="section-shell grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
-            <div>
+          <div className="section-shell grid min-w-0 gap-10 lg:grid-cols-[0.78fr_1.22fr]">
+            <div className="min-w-0">
               <p
                 className={
                   index === 1
@@ -233,8 +233,8 @@ export default function Home() {
               <h2
                 className={
                   index === 1
-                    ? "mt-4 font-display text-5xl leading-[0.95] sm:text-6xl"
-                    : "mt-4 text-5xl leading-[0.95] text-bone sm:text-6xl"
+                    ? "mt-4 max-w-full break-words font-display text-5xl leading-[0.95] sm:text-6xl"
+                    : "mt-4 max-w-full break-words text-5xl leading-[0.95] text-bone sm:text-6xl"
                 }
               >
                 Эфир “{item.title}”
@@ -249,13 +249,13 @@ export default function Home() {
                 {item.text}
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2">
               {item.points.map((point) => (
                 <div
                   className={
                     index === 1
-                      ? "premium-hover rounded-lg border border-bordeaux/18 bg-cacao/5 p-5 text-sm leading-6 text-cacao/74"
-                      : "premium-hover rounded-lg border border-brass/18 bg-obsidian/35 p-5 text-sm leading-6 text-bone/72"
+                      ? "premium-hover w-full min-w-0 overflow-hidden break-words rounded-lg border border-bordeaux/18 bg-cacao/5 p-5 text-sm leading-6 text-cacao/74"
+                      : "premium-hover w-full min-w-0 overflow-hidden break-words rounded-lg border border-brass/18 bg-obsidian/35 p-5 text-sm leading-6 text-bone/72"
                   }
                   key={point}
                 >

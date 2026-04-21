@@ -8,7 +8,7 @@ export default function MaterialsPage() {
         <LightLeak
           baseTransform="scale(1.02) rotate(1deg)"
           blur={2}
-          className="right-[-6%] top-[0%] h-[100%] w-[42%] object-contain object-right-bottom saturate-105 brightness-110 contrast-[1.15]"
+          className="right-[-28%] top-[-8%] h-[116%] w-[142%] object-contain object-right-center saturate-105 brightness-110 contrast-[1.15] lg:right-[-6%] lg:top-[0%] lg:h-[100%] lg:w-[42%] lg:object-right-bottom"
           mask="left"
           opacity={0.52}
           parallaxY={6}
