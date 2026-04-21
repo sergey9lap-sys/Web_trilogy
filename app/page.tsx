@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative min-h-[760px] bg-cinema-radial lg:min-h-[860px]">
         <LightLeak
           blur={2}
-          className="left-[-8%] top-[-6%] h-[112%] w-[116%] object-cover object-center lg:left-[-6%] lg:top-[12%] lg:h-[86%] lg:w-[50%] lg:object-left-center"
+          className="left-[-8%] top-[8%] h-[136vw] w-[116%] object-contain object-top lg:left-[-6%] lg:top-[12%] lg:h-[86%] lg:w-[50%] lg:object-cover lg:object-left-center"
           delay={260}
           mask="right"
           opacity={0.36}
@@ -424,7 +424,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28">
         <LightLeak
           blur={2}
-          className="left-[-15%] top-[-16%] h-[132%] w-[130%] object-cover object-center lg:left-auto lg:right-[-6%] lg:top-[-40%] lg:h-[138%] lg:w-[82%]"
+          className="left-[-18%] top-[28%] h-[102vw] w-[136vw] object-contain object-center lg:left-auto lg:right-[-6%] lg:top-[-40%] lg:h-[138%] lg:w-[82%] lg:object-cover"
           mask="center"
           opacity={0.2}
           parallaxX={0}
