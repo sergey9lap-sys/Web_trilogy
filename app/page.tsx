@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative min-h-[760px] bg-cinema-radial lg:min-h-[860px]">
         <LightLeak
           blur={2}
-          className="left-0 top-0 h-full w-full object-cover object-center lg:left-[-6%] lg:top-[12%] lg:h-[86%] lg:w-[50%] lg:object-left-center"
+          className="left-[-8%] top-[-6%] h-[112%] w-[116%] object-cover object-center lg:left-[-6%] lg:top-[12%] lg:h-[86%] lg:w-[50%] lg:object-left-center"
           delay={260}
           mask="right"
           opacity={0.36}
@@ -107,7 +107,7 @@ export default function Home() {
         <LightLeak
           baseTransform="rotate(8deg)"
           blur={2}
-          className="right-[-18%] top-0 h-full w-[128%] object-cover object-center brightness-105 contrast-110 lg:right-[-5%] lg:top-[12%] lg:h-[78%] lg:w-[30%]"
+          className="right-[-18%] top-[-10%] h-[120%] w-[128%] object-cover object-center brightness-105 contrast-110 lg:right-[-5%] lg:top-[12%] lg:h-[78%] lg:w-[30%]"
           mask="left"
           opacity={0.62}
           parallaxX={4}
@@ -187,7 +187,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-b from-cacao via-bordeaux/40 to-cacao py-20 sm:py-28" id="program">
         <LightLeak
           blur={2}
-          className="inset-x-0 top-0 h-full w-full object-cover object-center mix-blend-screen brightness-110 contrast-110 lg:top-[-10%] lg:h-[120%]"
+          className="inset-x-0 top-[-10%] h-[120%] w-full object-cover object-center mix-blend-screen brightness-110 contrast-110"
           mask="both"
           opacity={0.42}
           parallaxY={8}
@@ -300,7 +300,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28" id="artifacts">
         <LightLeak
           blur={2}
-          className="left-[-20%] top-0 h-full w-[140%] object-cover object-left-center brightness-110 contrast-110 lg:left-[-8%] lg:top-[-8%] lg:h-[112%] lg:w-[58%] lg:object-contain lg:object-left-top"
+          className="left-[-4%] top-[18%] h-[118vw] w-[118vw] object-contain object-center brightness-110 contrast-110 lg:left-[-8%] lg:top-[-8%] lg:h-[112%] lg:w-[58%] lg:object-contain lg:object-left-top"
           mask="right"
           opacity={0.35}
           parallaxX={4}
@@ -343,7 +343,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-b from-cacao to-bordeaux/55 py-20 sm:py-28">
         <LightLeak
           blur={2}
-          className="right-[-18%] top-0 h-full w-[130%] object-cover object-center mix-blend-screen brightness-110 contrast-110 drop-shadow-[0_0_80px_rgba(205,159,101,0.22)] lg:right-[-7%] lg:top-[4%] lg:h-[90%] lg:w-[38%]"
+          className="right-[-18%] top-[-10%] h-[120%] w-[130%] object-cover object-center mix-blend-screen brightness-110 contrast-110 drop-shadow-[0_0_80px_rgba(205,159,101,0.22)] lg:right-[-7%] lg:top-[4%] lg:h-[90%] lg:w-[38%]"
           mask="left"
           opacity={0.55}
           parallaxX={4}
@@ -424,7 +424,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28">
         <LightLeak
           blur={2}
-          className="left-[-15%] top-0 h-full w-[130%] object-cover object-center lg:left-auto lg:right-[-6%] lg:top-[-40%] lg:h-[138%] lg:w-[82%]"
+          className="left-[-15%] top-[-16%] h-[132%] w-[130%] object-cover object-center lg:left-auto lg:right-[-6%] lg:top-[-40%] lg:h-[138%] lg:w-[82%]"
           mask="center"
           opacity={0.2}
           parallaxX={0}
@@ -447,7 +447,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-cinema-radial py-20 sm:py-28">
         <LightLeak
           blur={2}
-          className="left-[-15%] top-0 h-full w-[130%] object-cover object-center lg:inset-x-0 lg:top-[-18%] lg:mx-auto lg:h-[138%] lg:w-[82%]"
+          className="left-[-15%] top-[-16%] h-[132%] w-[130%] object-cover object-center lg:inset-x-0 lg:top-[-18%] lg:mx-auto lg:h-[138%] lg:w-[82%]"
           mask="center"
           opacity={0.2}
           parallaxX={0}
