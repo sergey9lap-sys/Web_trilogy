@@ -1,6 +1,8 @@
 export const bizonUrl =
   process.env.NEXT_PUBLIC_BIZON_URL || "https://example.com/bizon-room";
 
+export const telegramChannelUrl = "https://t.me/+Vk5DsA87wxQyZTIy";
+
 export const dates = [
   { day: "11 мая", title: "Продукт", act: "Акт I" },
   { day: "12 мая", title: "Продажи", act: "Акт II" },

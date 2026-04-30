@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/components/button-link";
-import { bizonUrl, dates } from "@/lib/content";
+import { bizonUrl, dates, telegramChannelUrl } from "@/lib/content";
 
 export default function ThanksPage() {
   return (
@@ -12,7 +12,8 @@ export default function ThanksPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-bone/75">
             Сохраните даты трилогии и держите под рукой страницу материалов:
-            кодовые слова появятся во время эфиров.
+            кодовые слова появятся во время эфиров. Напоминание и ссылку на
+            эфир продублируем в телеграм-канал.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -30,6 +31,9 @@ export default function ThanksPage() {
           </div>
 
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <ButtonLink href={telegramChannelUrl} variant="light">
+              Подписаться на канал
+            </ButtonLink>
             <ButtonLink href="/materials">Перейти к материалам</ButtonLink>
             <ButtonLink href={bizonUrl} variant="secondary">
               Перейти на эфир

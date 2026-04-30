@@ -618,7 +618,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-col gap-4 border-t border-brass/18 pt-6 text-sm text-bone/60 sm:flex-row sm:items-center sm:justify-between">
-              <p>© 2026 Самозапуск. Все права защищены.</p>
+              <p>© 2026 Запуск 3.0. Все права защищены.</p>
               <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
                 <a href={`tel:${footer.phone.replace(/[^+\d]/g, "")}`}>
                   {footer.phone}
