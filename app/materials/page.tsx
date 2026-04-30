@@ -19,11 +19,11 @@ export default function MaterialsPage() {
         <div className="section-shell relative z-10">
           <p className="eyebrow">Артефакты трилогии</p>
           <h1 className="mt-5 max-w-4xl text-5xl leading-[0.95] text-bone sm:text-7xl">
-            Открывайте материалы по кодовым словам
+            Секретные материалы открываются по кодовым словам
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/75">
-            Подключитесь к эфиру, услышьте кодовое слово, введите его в нужный
-            блок и получите материал дня.
+            Подключитесь к эфиру, услышьте пароль, введите его на секретной
+            странице и откройте артефакт дня, когда он реально нужен.
           </p>
         </div>
       </section>

@@ -12,6 +12,7 @@ type UnlockState = {
 };
 
 const dayIds: MaterialDay[] = ["day1", "day2", "day3"];
+const artifactNumbers = ["I", "II", "III"];
 
 const initialState: UnlockState = {
   code: "",
@@ -87,6 +88,7 @@ export function MaterialsUnlock() {
         {program.map((item, index) => {
           const day = dayIds[index];
           const state = states[day];
+          const artifactLabel = `Получить ${artifactNumbers[index]} артефакт`;
 
           return (
             <article className="soft-panel rounded-lg p-5 sm:p-6" key={day}>
@@ -122,7 +124,7 @@ export function MaterialsUnlock() {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    Открыть материал
+                    {artifactLabel}
                   </a>
                 </div>
               ) : (
@@ -156,7 +158,7 @@ export function MaterialsUnlock() {
                     onClick={() => unlock(day)}
                     type="button"
                   >
-                    {state.isLoading ? "Проверяем..." : "Открыть материал"}
+                    {state.isLoading ? "Проверяем..." : artifactLabel}
                   </button>
                 </div>
               )}

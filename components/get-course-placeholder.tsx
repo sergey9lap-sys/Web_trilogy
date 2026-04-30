@@ -7,11 +7,11 @@ export function GetCourseEmbedPlaceholder() {
     >
       <p className="eyebrow">Регистрация</p>
       <h3 className="mt-3 text-3xl leading-tight text-bone">
-        Забронируйте место на премьере запуска
+        Бронируйте место в первом ряду
       </h3>
       <p className="mt-4 text-sm leading-6 text-bone/70">
-        Оставьте заявку и получите доступ к трилогии: три эфира, три этапа и
-        материалы, которые открываются в процессе прохождения.
+        Заполните форму — и мы вышлем вам пропуск за кулисы главной премьеры
+        сезона: три эфира, три артефакта и система, которая изменит ваше кино.
       </p>
       <div className="mt-6 grid gap-3">
         <div className="min-h-12 rounded-md border border-brass/22 bg-obsidian/45 px-4 py-3 text-sm text-bone/45">
@@ -22,13 +22,13 @@ export function GetCourseEmbedPlaceholder() {
         </div>
       </div>
       <p className="mt-5 text-sm font-semibold leading-6 text-brass">
-        Разница между “знаю” и “зарабатываю” — это система
+        Разница между “знаю” и “зарабатываю” — это система. Начнём съёмки 11 мая.
       </p>
       <a
         className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-md bg-bordeaux px-5 py-3 text-sm font-semibold text-bone shadow-ember transition hover:bg-carmine"
         href="/thanks"
       >
-        Зарегистрироваться
+        Занять место в зале
       </a>
     </div>
   );

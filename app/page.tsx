@@ -54,27 +54,27 @@ export default function Home() {
 
           <div className="grid flex-1 items-center gap-10 pb-12 pt-16 lg:grid-cols-[1.08fr_0.92fr] lg:pt-20">
             <Reveal delay={80}>
-              <p className="eyebrow">Премьера трилогии · 5-7 мая</p>
+              <p className="eyebrow">Премьера · 11-13 мая</p>
               <h1 className="mt-5 max-w-4xl text-6xl leading-[0.9] text-bone sm:text-7xl lg:text-8xl">
                 Запуск 3.0
               </h1>
               <p className="mt-6 max-w-3xl font-display text-4xl leading-none text-bone sm:text-5xl">
-                Соберите запуск как систему — а не как набор разрозненных
-                действий
+                Система, где каждый кадр работает на результат
               </p>
               <p className="mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass">
-                Вы перестаёте надеяться на продажи — начинаете ими управлять
+                Не смотри вебинары как зритель. Стань режиссёром своих запусков.
               </p>
               <p className="mt-6 max-w-2xl text-xl leading-8 text-bone/80">
-                3-дневная трилогия, в которой вы собираете продукт, продажи и
-                масштабирование в цельную систему, открывая рабочие материалы
-                прямо во время эфиров.
+                Три акта. Три инструмента силы. Вы не просто смотрите — вы
+                создаете оружие. В конце трёх дней у вас в руках будет
+                полностью собранная система “Продукт → Продажи →
+                Масштабирование”.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="#registration">
-                  Забронировать место
+                <ButtonLink href="#registration" variant="light">
+                  Получить сценарий успеха
                 </ButtonLink>
-                <ButtonLink href="/materials" variant="secondary">
+                <ButtonLink href="/materials">
                   Страница материалов
                 </ButtonLink>
               </div>
@@ -116,16 +116,16 @@ export default function Home() {
         />
         <Reveal className="section-shell relative z-10 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeading
-            eyebrow="Зачем другой формат"
-            title="Люди устали смотреть эфиры и складывать материалы “на потом”"
-            text="Информации стало слишком много. Обычный вебинар легко потерять среди вкладок, а скачанная рабочая тетрадь часто так и остаётся нетронутой."
+            eyebrow="Хит сезона"
+            title="Сделка — это последняя сцена. Ваша работа — написать сценарий"
+            text="Герой этого сценария — клиент. Вы собираете путь так, чтобы он сам захотел сыграть в финальной сцене и дойти до результата."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Скачали → не внедрили",
-              "Досмотрели → не собрали результат",
-              "Поняли → не сделали",
-              "Смотрели — не значит сделали",
+              "Смотреть — не значит управлять",
+              "Материалы без сцены снова уходят “на потом”",
+              "Запуск без сценария превращается в хаос",
+              "Система отличает хит от случайной удачи",
             ].map((item) => (
               <div
                 className="premium-hover flex min-h-28 items-center rounded-lg border border-brass/20 bg-obsidian/40 p-5 text-lg font-semibold leading-6 text-bone/86"
@@ -142,10 +142,10 @@ export default function Home() {
         <div className="section-shell">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <SectionHeading
-              eyebrow="Для кого эта трилогия"
-              title="Для тех, кто хочет собрать запуск в систему, а не тащить его на себе"
+              eyebrow="В ролях"
+              title="В главных ролях — тот, кто устал быть статистом"
             />
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 lg:grid-cols-3">
               {audience.map((item) => (
                 <div
                   className="premium-hover rounded-lg border border-brass/20 bg-obsidian/40 p-5 text-sm font-semibold leading-6 text-bone/74"
@@ -166,15 +166,15 @@ export default function Home() {
               Что внутри
             </p>
             <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
-              Три дня, за которые вы собираете продукт, продажи и масштаб в одну систему
+              Три акта. Три ключа к власти над рынком
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Продукт, который хочется пройти",
-              "Продажи без давления",
-              "Масштаб без хаоса",
-              "Материалы в момент внедрения",
+              "Продукт как путешествие героя",
+              "Продажи как управление вниманием",
+              "Масштабирование без выгорания",
+              "Артефакты в момент действия",
             ].map((item) => (
               <div className="premium-hover rounded-lg border border-bordeaux/18 bg-cacao/5 p-5 text-lg font-semibold leading-6 text-cacao/82" key={item}>
                 {item}
@@ -195,12 +195,12 @@ export default function Home() {
         />
         <Reveal className="section-shell relative z-10">
           <SectionHeading
-            eyebrow="Формат прохождения"
-            title="Вы не просто слушаете. Вы собираете запуск по частям."
-            text="На каждом эфире появляется кодовое слово. Вы вводите его на странице материалов и открываете следующий шаг запуска: рабочий файл, схему или ссылку для внедрения."
+            eyebrow="Трилогия"
+            title="Три акта. Три дня. Три инструмента"
+            text="Каждый эфир — отдельная сцена запуска. Вы проходите путь от продукта к продажам и масштабированию, открывая следующий артефакт в нужный момент."
           />
           <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-semibold leading-7 text-brass">
-            Каждый эфир — шаг к результату, а не к “пониманию”
+            Вы не просто смотрите — вы собираете систему, которой будете управлять
           </p>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {program.map((item) => (
@@ -237,7 +237,7 @@ export default function Home() {
                     : "mt-4 max-w-full break-words text-5xl leading-[0.95] text-bone sm:text-6xl"
                 }
               >
-                Эфир “{item.title}”
+                {item.title}
               </h2>
               <p
                 className={
@@ -275,7 +275,7 @@ export default function Home() {
                 Результат прохождения
               </p>
               <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
-                Что у вас будет через 3 дня
+                Титры не появятся. Начнётся ваш блокбастер
               </h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -310,19 +310,19 @@ export default function Home() {
         <Reveal className="section-shell relative z-10 grid gap-10 lg:grid-cols-[1fr_0.9fr]">
           <div>
             <SectionHeading
-              eyebrow="Механика артефактов"
-              title="Материалы появляются тогда, когда они реально нужны"
-              text="Вы не получаете всё сразу и не складываете это в папку “посмотреть потом”. На каждом эфире открывается следующий артефакт — и вы сразу понимаете, куда его применить."
+              eyebrow="Механика"
+              title="Секретный материал доступен только во время сеанса"
+              text="Вы не получаете всё сразу. Каждый эфир — это уровень. Внутри спрятано кодовое слово, как секретный пароль в шпионском кино. Вводите его — и открываете новый артефакт."
             />
             <p className="mt-6 text-lg font-semibold leading-7 text-brass">
-              Вы внедряете, а не откладываете
+              Материалы приходят тогда, когда вы уже готовы их применить
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {[
-                "Подключаетесь к эфиру",
-                "Получаете кодовое слово",
-                "Вводите код на странице материалов",
-                "Открываете артефакт и внедряете",
+                "Подключаешься к эфиру",
+                "Получаешь кодовое слово",
+                "Вводишь его на секретной странице",
+                "Открываешь артефакт и сразу внедряешь",
               ].map((step, index) => (
                 <div
                   className="premium-hover rounded-lg border border-brass/20 bg-bordeaux/20 p-5"
@@ -354,20 +354,20 @@ export default function Home() {
           <div>
             <SectionHeading
               eyebrow="Почему в прямом эфире"
-              title="Самое ценное происходит не в скачанной папке, а в моменте"
-              text="Когда материал открывается во время эфира, у него появляется контекст. Вы сразу понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
+              title="Магия момента работает сильнее скачанной папки"
+              text="Когда материал открывается во время эфира, у него появляется контекст. Вы понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
             />
             <p className="mt-6 text-lg font-semibold leading-7 text-brass">
-              Результат появляется в моменте, а не “когда-нибудь потом”
+              Лучше быть в кадре, чем разбирать запись “когда-нибудь потом”
             </p>
           </div>
           <div className="soft-panel rounded-lg p-6">
             <div className="grid gap-5">
               {[
                 "Кодовое слово появляется в эфире",
-                "Запись доступна ограниченное время",
-                "Бонусы привязаны к прохождению",
-                "Каждый день усиливает следующий",
+                "Запись доступна 24 часа",
+                "Артефакты привязаны к прохождению",
+                "Каждый акт усиливает следующий",
               ].map((item) => (
                 <div className="flex gap-4 border-b border-brass/15 pb-5 last:border-0 last:pb-0" key={item}>
                   <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brass" />
@@ -386,7 +386,7 @@ export default function Home() {
               {speaker.badge}
             </p>
             <h2 className="mt-4 font-display text-5xl leading-[0.94] sm:text-6xl">
-              Кто ведёт эфиры
+              Александра Горева-Куртышева
             </h2>
             <div className="mt-8 rounded-lg bg-cacao p-6 text-bone shadow-cinematic">
               <p className="font-display text-4xl leading-none">
@@ -410,7 +410,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-sm">
+          <div className="relative mx-auto w-full max-w-sm lg:mt-[8.6rem]">
             <div className="absolute inset-x-6 bottom-2 h-24 rounded-full bg-bordeaux/35 blur-3xl" />
             <img
               alt={speaker.imageAlt}
@@ -433,8 +433,8 @@ export default function Home() {
         />
         <Reveal className="section-shell relative z-10">
           <SectionHeading
-            eyebrow="Вопросы"
-            title="Что важно понять до старта"
+            eyebrow="Финальные титры"
+            title="Коротко о важном"
           />
           <div className="mt-8">
             {faq.map((item) => (
@@ -455,20 +455,21 @@ export default function Home() {
           src="/background/14 блок.jpg"
         />
         <div className="section-shell relative z-10 text-center">
-          <p className="eyebrow">Финальный вызов</p>
+          <p className="eyebrow">Финальный трейлер</p>
           <h2 className="mx-auto mt-4 max-w-3xl text-5xl leading-[0.94] text-bone sm:text-6xl">
-            Соберите запуск как систему — а не как набор случайных действий
+            Бронируйте место в первом ряду
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-bone/76">
-            3 эфира. 3 артефакта. 3 этапа, которые собираются в одну цельную
-            логику запуска.
+            3 дня. 3 эфира. 3 артефакта. Система, которая изменит ваше кино.
           </p>
           <p className="mx-auto mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass">
-            Вы уходите не с идеями — а с готовым запуском
+            Заполните форму — и мы вышлем вам пропуск за кулисы главной премьеры сезона
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink href="#registration">Зарегистрироваться</ButtonLink>
-            <ButtonLink href="/thanks" variant="secondary">
+            <ButtonLink href="#registration" variant="light">
+              Занять место в зале
+            </ButtonLink>
+            <ButtonLink href="/thanks">
               Посмотреть следующий шаг
             </ButtonLink>
           </div>
@@ -495,13 +496,13 @@ export default function Home() {
                 Написать в Телеграм
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-brass/60 bg-cacao/30 px-5 py-3 text-sm font-semibold text-bone transition hover:bg-brass/10"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-bordeaux px-5 py-3 text-sm font-semibold text-bone shadow-ember transition hover:bg-carmine"
                 href={footer.vkUrl}
               >
                 Написать ВКонтакте
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-brass/60 bg-cacao/30 px-5 py-3 text-sm font-semibold text-bone transition hover:bg-brass/10"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-bordeaux px-5 py-3 text-sm font-semibold text-bone shadow-ember transition hover:bg-carmine"
                 href={footer.maxUrl}
                 rel="noreferrer"
                 target="_blank"
@@ -535,8 +536,9 @@ export default function Home() {
               <div>
                 <p className="font-display text-3xl">Запуск 3.0</p>
                 <p className="mt-4 max-w-md text-sm leading-6 text-bone/72">
-                  3-дневная трилогия о том, как собрать запуск в систему:
-                  продукт, продажи и масштабирование по частям.
+                  3-дневная трилогия о том, как собрать систему, где каждый
+                  кадр работает на результат: продукт, продажи и
+                  масштабирование.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
