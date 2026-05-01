@@ -189,7 +189,7 @@ export default function Home() {
                   {index === 1 ? (
                     <img
                       alt=""
-                      className="mt-4 h-40 w-full rounded-xl object-cover"
+                      className="order-first mb-4 h-40 w-full rounded-xl object-cover lg:order-last lg:mb-0 lg:mt-4"
                       src={audienceImages[index]}
                     />
                   ) : null}
