@@ -1,11 +1,25 @@
 import { ActCard } from "@/components/act-card";
 import { ButtonLink } from "@/components/button-link";
+import { CinematicResults } from "@/components/cinematic-results";
 import { FaqItem } from "@/components/faq-item";
 import { GetCourseEmbedPlaceholder } from "@/components/get-course-placeholder";
 import { LightLeak } from "@/components/light-leak";
 import { Reveal } from "@/components/reveal";
+import { SceneReveal } from "@/components/scene-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { audience, care, faq, footer, program, results, speaker } from "@/lib/content";
+
+const audienceImages = [
+  "/background/мини-блок эксперт.jpg",
+  "/background/мини-блок продюсер.jpg",
+  "/background/мини-блок руководитель онлайн школы.jpg",
+];
+
+const programImages = [
+  "/background/блок продукт.jpg",
+  "/background/блок продажи.jpg",
+  "/background/блок масштабирование.jpg",
+];
 
 export default function Home() {
   return (
@@ -52,25 +66,25 @@ export default function Home() {
             </div>
           </header>
 
-          <div className="grid flex-1 items-center gap-10 pb-12 pt-16 lg:grid-cols-[1.08fr_0.92fr] lg:pt-20">
-            <Reveal delay={80}>
-              <p className="eyebrow">Премьера · 11-13 мая</p>
-              <h1 className="mt-5 max-w-4xl text-6xl leading-[0.9] text-bone sm:text-7xl lg:text-8xl">
+          <SceneReveal className="grid flex-1 items-start gap-10 pb-12 pt-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch lg:pt-20">
+            <div className="flex h-full flex-col">
+              <p className="eyebrow scene-item">Премьера · 11-13 мая</p>
+              <h1 className="scene-item mt-5 max-w-4xl text-6xl leading-[0.9] text-bone sm:text-7xl lg:text-8xl" style={{ transitionDelay: "0.18s" }}>
                 Запуск 3.0
               </h1>
-              <p className="mt-6 max-w-3xl font-display text-4xl leading-none text-bone sm:text-5xl">
+              <p className="scene-item mt-6 max-w-3xl font-display text-4xl leading-none text-bone sm:text-5xl" style={{ transitionDelay: "0.34s" }}>
                 Система, где каждый кадр работает на результат
               </p>
-              <p className="mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass">
+              <p className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.5s" }}>
                 Не смотри вебинары как зритель. Стань режиссёром своих запусков.
               </p>
-              <p className="mt-6 max-w-2xl text-xl leading-8 text-bone/80">
+              <p className="scene-item mt-6 max-w-2xl text-xl leading-8 text-bone/80" style={{ transitionDelay: "0.66s" }}>
                 Три акта. Три инструмента силы. Вы не просто смотрите — вы
                 создаете оружие. В конце трёх дней у вас в руках будет
                 полностью собранная система “Продукт → Продажи →
                 Масштабирование”.
               </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="scene-item mt-9 flex flex-col gap-3 sm:flex-row" style={{ transitionDelay: "0.82s" }}>
                 <ButtonLink href="#registration" variant="light">
                   Получить сценарий успеха
                 </ButtonLink>
@@ -78,28 +92,36 @@ export default function Home() {
                   Страница материалов
                 </ButtonLink>
               </div>
-            </Reveal>
-
-            <div className="soft-panel rounded-lg p-5 sm:p-7">
-              <p className="eyebrow">3 акта</p>
-              <div className="mt-6 space-y-5">
-                {program.map((item) => (
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                {program.map((item, index) => (
                   <div
-                    className="flex items-center justify-between gap-5 border-b border-brass/15 pb-5 last:border-0 last:pb-0"
+                    className="scene-item min-h-[8.5rem] min-w-0 overflow-hidden rounded-lg border border-brass/25 bg-bone p-4 text-cacao shadow-cinematic"
                     key={item.act}
+                    style={{ transitionDelay: `${1.04 + index * 0.16}s` }}
                   >
-                    <div>
-                      <p className="text-sm text-brass">{item.act}</p>
-                      <p className="mt-1 text-xl font-semibold text-bone">
-                        {item.title}
-                      </p>
-                    </div>
-                    <p className="text-sm text-bone/60">{item.date}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bordeaux">
+                      {item.act}
+                    </p>
+                    <p className="mt-3 min-w-0 break-words text-xl font-semibold leading-tight">
+                      {index === 2 ? "Масштаб" : item.title}
+                    </p>
+                    <p className="mt-2 text-sm text-cacao/64">{item.date}</p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+
+            <div
+              className="scene-item scene-item--right mx-auto flex aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-2xl shadow-cinematic lg:ml-auto lg:mr-[-3rem] lg:h-full lg:max-w-none"
+              style={{ transitionDelay: "0.98s" }}
+            >
+              <img
+                alt="Кинематографичный кадр запуска"
+                className="h-full w-full object-cover"
+                src="/background/первый блок.jpeg?v=1"
+              />
+            </div>
+          </SceneReveal>
         </div>
       </section>
 
@@ -128,7 +150,7 @@ export default function Home() {
               "Система отличает хит от случайной удачи",
             ].map((item) => (
               <div
-                className="premium-hover flex min-h-28 items-center rounded-lg border border-brass/20 bg-obsidian/40 p-5 text-lg font-semibold leading-6 text-bone/86"
+                className="premium-hover flex min-h-28 items-center rounded-lg border border-brass/25 bg-bone p-5 text-lg font-semibold leading-6 text-cacao shadow-cinematic"
                 key={item}
               >
                 {item}
@@ -140,22 +162,41 @@ export default function Home() {
 
       <section className="bg-cacao py-20 sm:py-28">
         <div className="section-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <SectionHeading
-              eyebrow="В ролях"
-              title="В главных ролях — тот, кто устал быть статистом"
-            />
+          <SceneReveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="scene-item">
+              <SectionHeading
+                eyebrow="В ролях"
+                title="В главных ролях — тот, кто устал быть статистом"
+              />
+            </div>
             <div className="grid gap-4 lg:grid-cols-3">
-              {audience.map((item) => (
+              {audience.map((item, index) => (
                 <div
-                  className="premium-hover rounded-lg border border-brass/20 bg-obsidian/40 p-5 text-sm font-semibold leading-6 text-bone/74"
+                  className="premium-hover scene-item scene-item--soft scene-item--glow flex h-full min-h-[22rem] flex-col rounded-lg border border-brass/20 bg-bone p-4 text-sm font-semibold leading-6 text-cacao shadow-cinematic"
                   key={item}
+                  style={{ transitionDelay: `${0.2 + index * 0.2}s` }}
                 >
-                  {item}
+                  {index !== 1 ? (
+                    <img
+                      alt=""
+                      className="h-40 w-full rounded-xl object-cover"
+                      src={audienceImages[index]}
+                    />
+                  ) : null}
+                  <p className={index === 1 ? "flex-1" : "mt-4 flex-1"}>
+                    {item}
+                  </p>
+                  {index === 1 ? (
+                    <img
+                      alt=""
+                      className="mt-4 h-40 w-full rounded-xl object-cover"
+                      src={audienceImages[index]}
+                    />
+                  ) : null}
                 </div>
               ))}
             </div>
-          </div>
+          </SceneReveal>
         </div>
       </section>
 
@@ -176,7 +217,7 @@ export default function Home() {
               "Масштабирование без выгорания",
               "Артефакты в момент действия",
             ].map((item) => (
-              <div className="premium-hover rounded-lg border border-bordeaux/18 bg-cacao/5 p-5 text-lg font-semibold leading-6 text-cacao/82" key={item}>
+              <div className="premium-hover flex min-h-28 items-center rounded-lg border border-bordeaux/25 bg-bordeaux p-5 text-lg font-semibold leading-6 text-bone shadow-ember" key={item}>
                 {item}
               </div>
             ))}
@@ -193,21 +234,29 @@ export default function Home() {
           parallaxY={8}
           src="/background/5 блок.jpg"
         />
-        <Reveal className="section-shell relative z-10">
-          <SectionHeading
-            eyebrow="Трилогия"
-            title="Три акта. Три дня. Три инструмента"
-            text="Каждый эфир — отдельная сцена запуска. Вы проходите путь от продукта к продажам и масштабированию, открывая следующий артефакт в нужный момент."
-          />
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-semibold leading-7 text-brass">
+        <SceneReveal className="section-shell relative z-10">
+          <div className="scene-item">
+            <SectionHeading
+              eyebrow="Трилогия"
+              title="Три акта. Три дня. Три инструмента"
+              text="Каждый эфир — отдельная сцена запуска. Вы проходите путь от продукта к продажам и масштабированию, открывая следующий артефакт в нужный момент."
+            />
+          </div>
+          <p className="scene-item mx-auto mt-6 max-w-2xl text-center text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.16s" }}>
             Вы не просто смотрите — вы собираете систему, которой будете управлять
           </p>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {program.map((item) => (
-              <ActCard key={item.act} {...item} />
+            {program.map((item, index) => (
+              <div
+                className="scene-item scene-item--soft h-full"
+                key={item.act}
+                style={{ transitionDelay: `${0.28 + index * 0.18}s` }}
+              >
+                <ActCard {...item} />
+              </div>
             ))}
           </div>
-        </Reveal>
+        </SceneReveal>
       </section>
 
       {program.map((item, index) => (
@@ -219,13 +268,23 @@ export default function Home() {
           }
           key={item.act}
         >
-          <div className="section-shell grid min-w-0 gap-10 lg:grid-cols-[0.78fr_1.22fr]">
-            <div className="min-w-0">
+          <SceneReveal className="section-shell grid min-w-0 items-center gap-10 lg:grid-cols-[1fr_0.78fr]">
+            <img
+              alt=""
+              className={
+                index === 1
+                  ? "scene-item scene-item--left order-first aspect-[4/3] w-full rounded-2xl object-cover shadow-cinematic lg:order-first"
+                  : "scene-item scene-item--right order-first aspect-[4/3] w-full rounded-2xl object-cover shadow-cinematic lg:order-last lg:self-end"
+              }
+              src={programImages[index]}
+              style={{ transitionDelay: "0.12s" }}
+            />
+            <div className={index === 1 ? "min-w-0 lg:order-last" : "min-w-0 lg:order-first"}>
               <p
                 className={
                   index === 1
-                    ? "text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux"
-                    : "eyebrow"
+                    ? "scene-item text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux"
+                    : "eyebrow scene-item"
                 }
               >
                 {item.act} · {item.date}
@@ -233,69 +292,44 @@ export default function Home() {
               <h2
                 className={
                   index === 1
-                    ? "mt-4 max-w-full break-words font-display text-5xl leading-[0.95] sm:text-6xl"
-                    : "mt-4 max-w-full break-words text-5xl leading-[0.95] text-bone sm:text-6xl"
+                    ? "scene-item mt-4 max-w-full break-words font-display text-5xl leading-[0.95] sm:text-6xl lg:whitespace-nowrap"
+                    : "scene-item mt-4 max-w-full break-words text-5xl leading-[0.95] text-bone sm:text-6xl lg:whitespace-nowrap"
                 }
+                style={{ transitionDelay: "0.2s" }}
               >
                 {item.title}
               </h2>
               <p
                 className={
                   index === 1
-                    ? "mt-5 text-base leading-7 text-cacao/74"
-                    : "mt-5 text-base leading-7 text-bone/72"
+                    ? "scene-item mt-5 text-base leading-7 text-cacao/74"
+                    : "scene-item mt-5 text-base leading-7 text-bone/72"
                 }
+                style={{ transitionDelay: "0.32s" }}
               >
                 {item.text}
               </p>
+              <div className="mt-8 grid min-w-0 gap-4 sm:grid-cols-2">
+                {item.points.map((point, pointIndex) => (
+                  <div
+                    className={
+                      index === 1
+                        ? "premium-hover scene-item scene-item--soft w-full min-w-0 overflow-hidden break-words rounded-lg border border-bordeaux/25 bg-bordeaux p-5 text-sm leading-6 text-bone shadow-ember"
+                        : "premium-hover scene-item scene-item--soft w-full min-w-0 overflow-hidden break-words rounded-lg border border-brass/25 bg-bone p-5 text-sm leading-6 text-cacao shadow-cinematic"
+                    }
+                    key={point}
+                    style={{ transitionDelay: `${0.42 + pointIndex * 0.14}s` }}
+                  >
+                    {point}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid min-w-0 gap-4 sm:grid-cols-2">
-              {item.points.map((point) => (
-                <div
-                  className={
-                    index === 1
-                      ? "premium-hover w-full min-w-0 overflow-hidden break-words rounded-lg border border-bordeaux/18 bg-cacao/5 p-5 text-sm leading-6 text-cacao/74"
-                      : "premium-hover w-full min-w-0 overflow-hidden break-words rounded-lg border border-brass/18 bg-obsidian/35 p-5 text-sm leading-6 text-bone/72"
-                  }
-                  key={point}
-                >
-                  {point}
-                </div>
-              ))}
-            </div>
-          </div>
+          </SceneReveal>
         </section>
       ))}
 
-      <section className="bg-bone py-20 text-cacao sm:py-28">
-        <div className="section-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux">
-                Результат прохождения
-              </p>
-              <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
-                Титры не появятся. Начнётся ваш блокбастер
-              </h2>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {results.map((item, index) => (
-                <div
-                  className="premium-hover rounded-lg border border-bordeaux/18 bg-cacao/5 p-5"
-                  key={item}
-                >
-                  <p className="font-display text-4xl text-bordeaux">
-                    {index + 1}
-                  </p>
-                  <p className="mt-3 text-sm font-semibold leading-6 text-cacao/78">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CinematicResults items={results} />
 
       <section className="relative overflow-hidden bg-cacao py-20 sm:py-28" id="artifacts">
         <LightLeak
@@ -307,14 +341,16 @@ export default function Home() {
           parallaxY={8}
           src="/background/10 блок.jpg"
         />
-        <Reveal className="section-shell relative z-10 grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+        <SceneReveal className="section-shell relative z-10 grid gap-10 lg:grid-cols-[1fr_0.9fr]">
           <div>
-            <SectionHeading
-              eyebrow="Механика"
-              title="Секретный материал доступен только во время сеанса"
-              text="Вы не получаете всё сразу. Каждый эфир — это уровень. Внутри спрятано кодовое слово, как секретный пароль в шпионском кино. Вводите его — и открываете новый артефакт."
-            />
-            <p className="mt-6 text-lg font-semibold leading-7 text-brass">
+            <div className="scene-item">
+              <SectionHeading
+                eyebrow="Механика"
+                title="Секретный материал доступен только во время сеанса"
+                text="Вы не получаете всё сразу. Каждый эфир — это уровень. Внутри спрятано кодовое слово, как секретный пароль в шпионском кино. Вводите его — и открываете новый артефакт."
+              />
+            </div>
+            <p className="scene-item mt-6 text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.15s" }}>
               Материалы приходят тогда, когда вы уже готовы их применить
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -325,19 +361,22 @@ export default function Home() {
                 "Открываешь артефакт и сразу внедряешь",
               ].map((step, index) => (
                 <div
-                  className="premium-hover rounded-lg border border-brass/20 bg-bordeaux/20 p-5"
+                  className="premium-hover scene-item scene-item--soft scene-item--unlock rounded-lg border border-brass/25 bg-bone p-5 text-cacao shadow-cinematic"
                   key={step}
+                  style={{ transitionDelay: `${0.24 + index * 0.15}s` }}
                 >
-                  <p className="font-display text-4xl text-brass">
+                  <p className="font-display text-4xl text-bordeaux">
                     {index + 1}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-bone/75">{step}</p>
+                  <p className="mt-3 text-sm leading-6 text-cacao/75">{step}</p>
                 </div>
               ))}
             </div>
           </div>
-          <GetCourseEmbedPlaceholder />
-        </Reveal>
+          <div className="scene-item scene-item--right scene-item--glow" style={{ transitionDelay: "0.9s" }}>
+            <GetCourseEmbedPlaceholder />
+          </div>
+        </SceneReveal>
       </section>
 
       <section className="relative overflow-hidden bg-gradient-to-b from-cacao to-bordeaux/55 py-20 sm:py-28">
@@ -350,14 +389,16 @@ export default function Home() {
           parallaxY={8}
           src="/background/11 блок.jpg"
         />
-        <Reveal className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <SceneReveal className="section-shell relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <SectionHeading
-              eyebrow="Почему в прямом эфире"
-              title="Магия момента работает сильнее скачанной папки"
-              text="Когда материал открывается во время эфира, у него появляется контекст. Вы понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
-            />
-            <p className="mt-6 text-lg font-semibold leading-7 text-brass">
+            <div className="scene-item">
+              <SectionHeading
+                eyebrow="Почему в прямом эфире"
+                title="Магия момента работает сильнее скачанной папки"
+                text="Когда материал открывается во время эфира, у него появляется контекст. Вы понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
+              />
+            </div>
+            <p className="scene-item mt-6 text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.16s" }}>
               Лучше быть в кадре, чем разбирать запись “когда-нибудь потом”
             </p>
           </div>
@@ -368,15 +409,19 @@ export default function Home() {
                 "Запись доступна 24 часа",
                 "Артефакты привязаны к прохождению",
                 "Каждый акт усиливает следующий",
-              ].map((item) => (
-                <div className="flex gap-4 border-b border-brass/15 pb-5 last:border-0 last:pb-0" key={item}>
+              ].map((item, index) => (
+                <div
+                  className="scene-item scene-item--left flex gap-4 border-b border-brass/15 pb-5 last:border-0 last:pb-0"
+                  key={item}
+                  style={{ transitionDelay: `${0.12 + index * 0.13}s` }}
+                >
                   <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brass" />
                   <p className="text-sm leading-6 text-bone/74">{item}</p>
                 </div>
               ))}
             </div>
           </div>
-        </Reveal>
+        </SceneReveal>
       </section>
 
       <section className="bg-bone py-20 text-cacao sm:py-28" id="speaker">
@@ -454,18 +499,18 @@ export default function Home() {
           parallaxY={0}
           src="/background/14 блок.jpg"
         />
-        <div className="section-shell relative z-10 text-center">
-          <p className="eyebrow">Финальный трейлер</p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-5xl leading-[0.94] text-bone sm:text-6xl">
+        <SceneReveal className="section-shell relative z-10 text-center">
+          <p className="eyebrow scene-item">Финальный трейлер</p>
+          <h2 className="scene-item mx-auto mt-4 max-w-3xl text-5xl leading-[0.94] text-bone sm:text-6xl" style={{ transitionDelay: "0.12s" }}>
             Бронируйте место в первом ряду
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-bone/76">
+          <p className="scene-item mx-auto mt-5 max-w-2xl text-lg leading-8 text-bone/76" style={{ transitionDelay: "0.28s" }}>
             3 дня. 3 эфира. 3 артефакта. Система, которая изменит ваше кино.
           </p>
-          <p className="mx-auto mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass">
+          <p className="scene-item mx-auto mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.4s" }}>
             Заполните форму — и мы вышлем вам пропуск за кулисы главной премьеры сезона
           </p>
-          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="scene-item mt-9 flex flex-col justify-center gap-3 sm:flex-row" style={{ transitionDelay: "0.55s" }}>
             <ButtonLink href="#registration" variant="light">
               Занять место в зале
             </ButtonLink>
@@ -473,7 +518,7 @@ export default function Home() {
               Посмотреть следующий шаг
             </ButtonLink>
           </div>
-        </div>
+        </SceneReveal>
       </section>
 
       <section className="bg-cacao py-20 sm:py-28" id="care">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { program } from "@/lib/content";
 import type { Material, MaterialDay } from "@/lib/supabase";
 
@@ -22,11 +22,34 @@ const initialState: UnlockState = {
 };
 
 export function MaterialsUnlock() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisualVisible, setIsVisualVisible] = useState(false);
   const [states, setStates] = useState<Record<MaterialDay, UnlockState>>({
     day1: initialState,
     day2: initialState,
     day3: initialState,
   });
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node || isVisualVisible) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisualVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [isVisualVisible]);
 
   function updateDay(day: MaterialDay, patch: Partial<UnlockState>) {
     setStates((current) => ({
@@ -83,7 +106,14 @@ export function MaterialsUnlock() {
   }
 
   return (
-    <section className="section-shell py-14 sm:py-20">
+    <section className="section-shell py-14 sm:py-20" ref={sectionRef}>
+      <img
+        alt="Кино-кадр страницы материалов"
+        className={`materials-unlock-visual mb-8 h-[220px] w-full rounded-2xl object-cover sm:h-[280px] lg:mb-10 lg:h-[320px] ${
+          isVisualVisible ? "is-visible" : ""
+        }`}
+        src="/background/блок страница материалов.jpg"
+      />
       <div className="grid gap-5 lg:grid-cols-3">
         {program.map((item, index) => {
           const day = dayIds[index];

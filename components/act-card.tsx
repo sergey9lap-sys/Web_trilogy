@@ -16,27 +16,27 @@ export function ActCard({
   artifact,
 }: ActCardProps) {
   return (
-    <article className="soft-panel premium-hover rounded-lg p-6">
+    <article className="premium-hover flex h-full flex-col rounded-lg border border-brass/30 bg-bone p-6 text-cacao shadow-cinematic">
       <div className="flex items-start justify-between gap-5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux">
             {act}
           </p>
-          <h3 className="mt-4 text-3xl text-bone">{title}</h3>
+          <h3 className="mt-4 text-3xl text-cacao">{title}</h3>
         </div>
-        <span className="flex min-w-[3.75rem] items-center justify-center rounded-full border border-brass/40 px-3 py-1 text-sm text-brass whitespace-nowrap">
+        <span className="flex min-w-[3.75rem] items-center justify-center whitespace-nowrap rounded-full border border-bordeaux/35 px-3 py-1 text-sm text-bordeaux">
           {date}
         </span>
       </div>
-      <p className="mt-5 text-sm leading-6 text-bone/70">{text}</p>
-      <p className="mt-4 text-sm font-semibold leading-6 text-brass">
+      <p className="mt-5 text-sm leading-6 text-cacao/74">{text}</p>
+      <p className="mt-4 text-sm font-semibold leading-6 text-bordeaux">
         {anchor}
       </p>
-      <div className="mt-7 border-t border-brass/20 pt-5">
-        <p className="text-xs uppercase tracking-[0.18em] text-bone/50">
+      <div className="mt-auto border-t border-bordeaux/18 pt-5">
+        <p className="text-xs uppercase tracking-[0.18em] text-cacao/50">
           Артефакт
         </p>
-        <p className="mt-2 text-lg font-semibold text-brass">{artifact}</p>
+        <p className="mt-2 text-lg font-semibold text-bordeaux">{artifact}</p>
       </div>
     </article>
   );
