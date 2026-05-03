@@ -79,7 +79,7 @@ export default function Home() {
                 Не смотри вебинары как зритель. Стань режиссёром своих запусков.
               </p>
               <div className="scene-item mt-5 sm:hidden" style={{ transitionDelay: "0.58s" }}>
-                <ButtonLink href="#registration">
+                <ButtonLink className="min-h-14 w-full text-base" href="#registration">
                   Зарегистрироваться
                 </ButtonLink>
               </div>
