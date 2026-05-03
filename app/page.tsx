@@ -37,7 +37,9 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-cacao to-transparent" />
         <div className="section-shell relative flex min-h-[760px] flex-col py-6 lg:min-h-[860px]">
           <header className="flex items-center justify-between gap-4">
-            <p className="font-display text-2xl text-bone">Запуск 3.0</p>
+            <p className="hidden font-display text-2xl text-bone sm:block">
+              Запуск 3.0
+            </p>
             <nav className="hidden items-center gap-6 text-sm text-bone/72 lg:flex">
               <a className="transition hover:text-brass" href="#format">
                 Формат
@@ -79,7 +81,7 @@ export default function Home() {
                 Не смотри вебинары как зритель. Стань режиссёром своих запусков.
               </p>
               <div className="scene-item mt-5 sm:hidden" style={{ transitionDelay: "0.58s" }}>
-                <ButtonLink className="min-h-14 w-full text-base" href="#registration">
+                <ButtonLink className="min-h-14 w-full text-base" href="#registration" variant="light">
                   Зарегистрироваться
                 </ButtonLink>
               </div>
