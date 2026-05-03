@@ -60,7 +60,7 @@ export default function Home() {
               >
                 Получить материалы
               </ButtonLink>
-              <ButtonLink href="#registration">
+              <ButtonLink className="hidden sm:inline-flex" href="#registration">
                 Зарегистрироваться
               </ButtonLink>
             </div>
@@ -78,6 +78,11 @@ export default function Home() {
               <p className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.5s" }}>
                 Не смотри вебинары как зритель. Стань режиссёром своих запусков.
               </p>
+              <div className="scene-item mt-5 sm:hidden" style={{ transitionDelay: "0.58s" }}>
+                <ButtonLink href="#registration">
+                  Зарегистрироваться
+                </ButtonLink>
+              </div>
               <p className="scene-item mt-6 max-w-2xl text-xl leading-8 text-bone/80" style={{ transitionDelay: "0.66s" }}>
                 Три акта. Три инструмента силы. Вы не просто смотрите — вы
                 создаете оружие. В конце трёх дней у вас в руках будет
