@@ -24,22 +24,27 @@ const programImages = [
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <section className="relative min-h-[560px] bg-cinema-radial lg:min-h-[620px]">
-        <LightLeak
-          blur={2}
-          className="left-[-8%] top-[8%] h-[136vw] w-[116%] object-contain object-top lg:left-[-6%] lg:top-[12%] lg:h-[86%] lg:w-[50%] lg:object-cover lg:object-left-center"
-          delay={260}
-          mask="right"
-          opacity={0.36}
-          parallaxY={10}
-          src="/background/1 блок.jpg"
-        />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-cacao to-transparent" />
-        <div className="section-shell relative flex min-h-[560px] flex-col py-5 lg:min-h-[620px]">
-          <header className="flex items-center justify-between gap-4">
-            <p className="hidden font-display text-2xl text-bone sm:block">
-              Запуск 3.0
-            </p>
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_76%_26%,rgba(110,21,26,0.26),transparent_20rem),radial-gradient(circle_at_15%_8%,rgba(110,21,26,0.48),transparent_28rem),linear-gradient(115deg,#120404_0%,#240808_44%,#0b0808_100%)] lg:h-[840px] lg:max-h-[900px]">
+        <div className="absolute inset-0 z-0">
+          <img
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-y-0 right-[-4%] h-full w-[108%] translate-y-8 object-cover object-[72%_58%] opacity-[0.84] sm:w-[92%] sm:opacity-[0.9] lg:w-[76%] lg:translate-y-12 lg:object-[76%_58%] lg:opacity-[0.92]"
+            src="/background/первый блок.jpeg?v=1"
+          />
+          <div className="absolute inset-0 bg-[rgba(15,3,5,0.44)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(20,3,6,1)_0%,rgba(20,3,6,1)_24%,rgba(20,3,6,0.96)_34%,rgba(20,3,6,0.84)_44%,rgba(20,3,6,0.62)_56%,rgba(20,3,6,0.34)_70%,rgba(20,3,6,0.1)_86%,transparent_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(20,3,6,0.94)_0%,rgba(20,3,6,0.58)_10%,rgba(20,3,6,0.12)_26%,transparent_44%,transparent_50%,rgba(20,3,6,0.75)_82%,rgba(20,3,6,1)_100%)]" />
+        </div>
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.44),transparent_28%,rgba(0,0,0,0.42)),radial-gradient(ellipse_at_center,transparent_46%,rgba(0,0,0,0.58)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 z-0 h-44 bg-gradient-to-t from-cacao via-cacao/78 to-transparent" />
+        <div className="section-shell relative z-10 flex min-h-[720px] max-w-7xl flex-col py-5 lg:h-full lg:min-h-0">
+          <header className="flex items-center gap-10">
+            <img
+              alt="Trilogy"
+              className="hidden h-12 w-auto object-contain sm:block"
+              src="/Без фона-2.png"
+            />
             <nav className="hidden items-center gap-6 text-sm text-bone/72 lg:flex">
               <a className="transition hover:text-brass" href="#format">
                 Формат
@@ -54,78 +59,84 @@ export default function Home() {
                 Служба заботы
               </a>
             </nav>
-            <div className="flex items-center gap-2 sm:gap-3">
-              <ButtonLink
-                className="hidden sm:inline-flex"
-                href="/materials"
-                variant="light"
-              >
-                Получить материалы
-              </ButtonLink>
-              <ButtonLink
-                className="hidden sm:inline-flex"
-                href="#program"
-              >
-                Посмотреть программу
-              </ButtonLink>
-            </div>
           </header>
 
-          <SceneReveal className="grid flex-1 items-start gap-7 pb-8 pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch lg:pt-12">
-            <div className="flex h-full flex-col">
-              <p className="eyebrow scene-item">Премьера · 11-13 мая</p>
-              <h1 className="scene-item mt-4 max-w-4xl text-5xl leading-[0.92] text-bone sm:text-6xl lg:text-7xl" style={{ transitionDelay: "0.18s" }}>
-                Запуск 3.0
-              </h1>
-              <p className="scene-item mt-4 max-w-3xl font-display text-3xl leading-none text-bone sm:text-4xl" style={{ transitionDelay: "0.34s" }}>
-                Система, где каждый кадр работает на результат
-              </p>
-              <p className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.5s" }}>
-                Не смотри вебинары как зритель. Стань режиссёром своих запусков.
-              </p>
-              <p className="scene-item mt-4 max-w-2xl text-base leading-7 text-bone/80" style={{ transitionDelay: "0.66s" }}>
-                Три акта. Три инструмента силы. Вы не просто смотрите — вы
-                создаете оружие. В конце трёх дней у вас в руках будет
-                полностью собранная система “Продукт → Продажи →
-                Масштабирование”.
-              </p>
-              <div className="scene-item mt-6 flex justify-center lg:justify-start" style={{ transitionDelay: "0.82s" }}>
-                <ButtonLink
-                  className="w-full sm:w-auto sm:min-w-[24rem] sm:text-lg"
-                  href="#registration"
-                  variant="light"
+          <SceneReveal className="flex flex-1 flex-col justify-start gap-7 pb-8 pt-9 lg:gap-8 lg:pt-12">
+            <div className="grid items-start gap-7 lg:grid-cols-[0.48fr_0.52fr]">
+              <div className="flex h-full flex-col">
+                <p className="eyebrow scene-item">ПРЕМЬЕРА • 11–13 МАЯ</p>
+                <h1
+                  className="scene-item mt-4 max-w-4xl text-5xl leading-[0.92] text-bone sm:text-6xl lg:text-[5.8rem]"
+                  style={{ transitionDelay: "0.18s" }}
                 >
-                  Зарегистрироваться
-                </ButtonLink>
-              </div>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {program.map((item, index) => (
-                  <div
-                    className="scene-item min-h-[6.8rem] min-w-0 overflow-hidden rounded-lg border border-brass/25 bg-bone p-4 text-cacao shadow-cinematic"
-                    key={item.act}
-                    style={{ transitionDelay: `${1.04 + index * 0.16}s` }}
+                  Запуск 3.0
+                </h1>
+                <p
+                  className="scene-item mt-4 max-w-3xl font-display text-3xl leading-none text-bone sm:text-4xl lg:text-[2.7rem]"
+                  style={{ transitionDelay: "0.34s" }}
+                >
+                  Система, где каждый кадр работает на результат
+                </p>
+                <p
+                  className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass"
+                  style={{ transitionDelay: "0.5s" }}
+                >
+                  Не смотри вебинары как зритель. Стань режиссёром своих запусков.
+                </p>
+                <div
+                  className="scene-item mt-6 flex flex-col gap-3 sm:flex-row lg:justify-start"
+                  style={{ transitionDelay: "0.66s" }}
+                >
+                  <ButtonLink
+                    className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[20rem] lg:w-[23rem]"
+                    href="#registration"
+                    variant="light"
                   >
+                    Зарегистрироваться
+                  </ButtonLink>
+                  <ButtonLink
+                    className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[17rem] lg:w-[19rem]"
+                    href="#program"
+                  >
+                    Посмотреть программу
+                  </ButtonLink>
+                </div>
+                <p
+                  className="scene-item mt-5 max-w-2xl text-base leading-7 text-bone/80"
+                  style={{ transitionDelay: "0.82s" }}
+                >
+                  Три акта. Три инструмента силы. Вы не просто смотрите — вы
+                  создаете оружие. В конце трёх дней у вас в руках будет
+                  полностью собранная система.
+                </p>
+              </div>
+              <div aria-hidden="true" className="hidden lg:block" />
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3 lg:max-w-[58rem]">
+              {program.map((item, index) => (
+                <div
+                  className="scene-item min-h-[9.4rem] min-w-0 overflow-hidden rounded-[1.25rem] border border-brass/18 bg-bone/95 p-5 text-cacao shadow-[0_18px_56px_rgba(0,0,0,0.28)]"
+                  key={item.act}
+                  style={{ transitionDelay: `${1.04 + index * 0.16}s` }}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bordeaux text-sm font-semibold text-brass">
+                      {index + 1}
+                    </span>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bordeaux">
                       {item.act}
                     </p>
-                    <p className="mt-3 min-w-0 break-words text-xl font-semibold leading-tight">
-                      {index === 2 ? "Масштаб" : item.title}
-                    </p>
-                    <p className="mt-2 text-sm text-cacao/64">{item.date}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="scene-item scene-item--right mx-auto flex aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-2xl shadow-cinematic lg:ml-auto lg:mr-[-3rem] lg:h-full lg:max-w-none"
-              style={{ transitionDelay: "0.98s" }}
-            >
-              <img
-                alt="Кинематографичный кадр запуска"
-                className="h-full w-full object-cover"
-                src="/background/первый блок.jpeg?v=1"
-              />
+                  <p className="mt-4 min-w-0 break-words font-display text-2xl leading-none text-cacao">
+                    {index === 2 ? "Масштаб" : item.title}
+                  </p>
+                  <div className="mt-3 h-px w-3/4 bg-bordeaux/18" />
+                  <p className="mt-3 text-sm font-semibold text-bordeaux">
+                    {item.date}
+                  </p>
+                </div>
+              ))}
             </div>
           </SceneReveal>
         </div>
