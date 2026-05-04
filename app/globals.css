@@ -57,10 +57,10 @@ body {
 @layer utilities {
   .scroll-reveal {
     opacity: 0;
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 18px, 0);
     transition:
-      opacity 0.82s ease-out,
-      transform 0.82s ease-out;
+      opacity 0.52s ease-out,
+      transform 0.52s ease-out;
     will-change: opacity, transform;
   }
 
@@ -103,25 +103,25 @@ body {
 
   .cta-glow {
     transition:
-      transform 0.24s ease-out,
-      box-shadow 0.24s ease-out,
-      background-color 0.24s ease-out,
-      border-color 0.24s ease-out;
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .cta-glow:hover {
-    transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0) scale(1.03);
     box-shadow: 0 0 36px rgba(205, 159, 101, 0.18);
   }
 
   .scene-item {
     opacity: 0;
     filter: blur(3px);
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 18px, 0);
     transition:
-      opacity 0.68s ease-out,
-      filter 0.56s ease-out,
-      transform 0.68s ease-out,
+      opacity 0.52s ease-out,
+      filter 0.48s ease-out,
+      transform 0.52s ease-out,
       border-color 0.26s ease-out,
       box-shadow 0.4s ease-out,
       background-color 0.26s ease-out;

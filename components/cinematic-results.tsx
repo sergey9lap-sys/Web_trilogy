@@ -37,7 +37,7 @@ export function CinematicResults({ items }: CinematicResultsProps) {
 
   return (
     <section
-      className="cinematic-results bg-bone py-20 text-cacao sm:py-28"
+      className="cinematic-results bg-bone py-10 text-cacao sm:py-14"
       ref={ref}
     >
       <div className="section-shell">
@@ -47,7 +47,7 @@ export function CinematicResults({ items }: CinematicResultsProps) {
         <div className="mt-4 flex min-w-0 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <h2
             className={clsx(
-              "cinematic-results__title font-display text-4xl leading-[0.98] sm:text-5xl lg:whitespace-nowrap lg:text-[3rem]",
+              "cinematic-results__title font-display text-3xl leading-[1] sm:text-4xl lg:whitespace-nowrap",
               isVisible && "is-visible",
             )}
           >
@@ -62,11 +62,11 @@ export function CinematicResults({ items }: CinematicResultsProps) {
           />
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => (
             <div
               className={clsx(
-                "cinematic-results__card premium-hover rounded-lg border border-bordeaux/25 bg-bordeaux p-5 text-bone shadow-ember",
+                "cinematic-results__card premium-hover rounded-lg border border-bordeaux/25 bg-bordeaux p-4 text-bone shadow-ember",
                 isVisible && "is-visible",
               )}
               key={item}
