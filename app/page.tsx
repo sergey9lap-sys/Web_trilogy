@@ -142,23 +142,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-cacao py-10 sm:py-14" id="format">
-        <LightLeak
-          baseTransform="rotate(8deg)"
-          blur={2}
-          className="right-[-18%] top-[-10%] h-[120%] w-[128%] object-cover object-center brightness-105 contrast-110 lg:right-[-5%] lg:top-[12%] lg:h-[78%] lg:w-[30%]"
-          mask="left"
-          opacity={0.62}
-          parallaxX={4}
-          parallaxY={8}
-          src="/background/2 блок.jpg"
-        />
+      <section className="relative overflow-hidden bg-bone py-10 text-cacao sm:py-14" id="format">
         <Reveal className="section-shell relative z-10 grid items-center gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <SectionHeading
-            eyebrow="Хит сезона"
-            title="Сделка — это последняя сцена. Ваша работа — написать сценарий"
-            text="Герой этого сценария — клиент. Вы собираете путь так, чтобы он сам захотел сыграть в финальной сцене и дойти до результата."
-          />
+          <div className="max-w-3xl">
+            <p className="eyebrow">Хит сезона</p>
+            <h2 className="mt-4 text-4xl leading-[0.98] text-cacao sm:text-5xl">
+              Сделка — это последняя сцена. Ваша работа — написать сценарий
+            </h2>
+            <p className="mt-5 text-base leading-7 text-cacao/75 sm:text-lg">
+              Герой этого сценария — клиент. Вы собираете путь так, чтобы он сам захотел сыграть в финальной сцене и дойти до результата.
+            </p>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
               "Смотреть — не значит управлять",
@@ -167,7 +161,7 @@ export default function Home() {
               "Система отличает хит от случайной удачи",
             ].map((item) => (
               <div
-                className="premium-hover flex min-h-20 items-center rounded-lg border border-brass/25 bg-bone p-4 text-base font-semibold leading-6 text-cacao shadow-cinematic"
+                className="premium-hover flex min-h-20 items-center rounded-lg border border-brass/25 bg-[#240808] p-4 text-base font-semibold leading-6 text-bone shadow-cinematic"
                 key={item}
               >
                 {item}
@@ -179,39 +173,75 @@ export default function Home() {
 
       <section className="bg-cacao py-10 sm:py-14">
         <div className="section-shell">
-          <SceneReveal className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <SceneReveal className="grid gap-6">
             <div className="scene-item">
               <SectionHeading
                 eyebrow="В ролях"
                 title="В главных ролях — тот, кто устал быть статистом"
+                text="Три взгляда. Одна правда. Один запуск."
               />
             </div>
-            <div className="grid gap-4 lg:grid-cols-3">
+            <div className="grid gap-4">
               {audience.map((item, index) => (
-                <div
-                  className="premium-hover scene-item scene-item--soft scene-item--glow flex h-full min-h-[15rem] flex-col rounded-lg border border-brass/20 bg-bone p-4 text-sm font-semibold leading-6 text-cacao shadow-cinematic"
+                <article
+                  className={`premium-hover scene-item scene-item--soft scene-item--glow grid min-h-[22rem] overflow-hidden rounded-[1.25rem] border border-brass/25 shadow-cinematic sm:min-h-[24rem] lg:min-h-0 lg:grid-cols-[45%_55%] ${
+                    index === 1 ? "bg-bone" : "bg-[rgba(20,4,6,0.55)]"
+                  }`}
                   key={item}
                   style={{ transitionDelay: `${0.2 + index * 0.2}s` }}
                 >
-                  {index !== 1 ? (
+                  <div
+                    className={`relative min-h-[12rem] overflow-hidden ${
+                      index < 2 ? "lg:h-[13.5rem]" : "lg:h-[11rem]"
+                    } ${
+                      index === 1 ? "lg:order-last" : ""
+                    }`}
+                  >
                     <img
                       alt=""
-                      className="h-28 w-full rounded-lg object-cover"
+                      className="h-full w-full object-cover opacity-[0.84]"
                       src={audienceImages[index]}
                     />
-                  ) : null}
-                  <p className={index === 1 ? "flex-1" : "mt-4 flex-1"}>
-                    {item}
-                  </p>
-                  {index === 1 ? (
-                    <img
-                      alt=""
-                      className="order-first mb-4 h-28 w-full rounded-lg object-cover lg:order-last lg:mb-0 lg:mt-4"
-                      src={audienceImages[index]}
-                    />
-                  ) : null}
-                </div>
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(20,4,6,0.1),rgba(20,4,6,0.62))] lg:bg-[linear-gradient(to_right,rgba(20,4,6,0.12),rgba(20,4,6,0.68))]" />
+                    {index === 1 ? (
+                      <div className="absolute inset-0 hidden bg-[linear-gradient(to_left,rgba(20,4,6,0.12),rgba(20,4,6,0.72))] lg:block" />
+                    ) : null}
+                  </div>
+                  <div
+                    className={`flex min-h-[10rem] flex-col px-5 py-5 sm:px-7 lg:pt-8 ${
+                      index < 2 ? "lg:h-[13.5rem]" : "lg:h-[11rem]"
+                    } ${
+                      index === 1 ? "text-cacao" : "text-bone"
+                    }`}
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brass">
+                      {item.split(":")[0]}
+                    </p>
+                    <p
+                      className={`mt-4 font-display text-2xl leading-[1.08] sm:text-3xl lg:text-[1.7rem] ${
+                        index === 1 ? "text-cacao" : "text-bone"
+                      }`}
+                    >
+                      <span className="mr-2 text-3xl leading-none text-brass">
+                        “
+                      </span>
+                      {item.slice(item.indexOf("“") + 1, item.lastIndexOf("”"))}
+                      <span className="ml-2 text-3xl leading-none text-brass">
+                        ”
+                      </span>
+                    </p>
+                  </div>
+                </article>
               ))}
+            </div>
+            <div className="scene-item flex justify-center" style={{ transitionDelay: "0.82s" }}>
+              <ButtonLink
+                className="!border-bone !bg-bone !text-bordeaux hover:!border-brass hover:!bg-brass hover:!text-cacao"
+                href="#program"
+                variant="secondary"
+              >
+                Узнать подробнее
+              </ButtonLink>
             </div>
           </SceneReveal>
         </div>
@@ -234,15 +264,10 @@ export default function Home() {
               "Масштабирование без выгорания",
               "Артефакты в момент действия",
             ].map((item) => (
-              <div className="premium-hover flex min-h-20 items-center rounded-lg border border-bordeaux/25 bg-bordeaux p-4 text-base font-semibold leading-6 text-bone shadow-ember" key={item}>
+              <div className="premium-hover flex min-h-20 items-center rounded-lg border border-bordeaux/25 bg-[#240808] p-4 text-base font-semibold leading-6 text-bone shadow-ember" key={item}>
                 {item}
               </div>
             ))}
-          </div>
-          <div className="flex justify-center lg:col-span-2">
-            <ButtonLink href="#program" variant="secondary">
-              Узнать подробнее
-            </ButtonLink>
           </div>
         </div>
       </section>
@@ -288,50 +313,51 @@ export default function Home() {
 
       {program.map((item, index) => (
         <section
-          className={
-            index === 1
-              ? "bg-bone py-10 text-cacao sm:py-14"
-              : "bg-cacao py-10 sm:py-14"
-          }
+          className="relative overflow-hidden bg-[#240808] py-8 sm:py-10"
           key={item.act}
         >
-          <SceneReveal className="section-shell grid min-w-0 items-center gap-6 lg:grid-cols-[1fr_0.78fr]">
-            <img
-              alt=""
+          {index > 0 ? (
+            <div className="absolute inset-x-0 top-0 z-0 flex items-center justify-center">
+              <div className="h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-brass/80 to-transparent shadow-[0_0_26px_rgba(205,159,101,0.42)]" />
+              <div className="absolute h-9 w-9 rotate-45 border border-brass/70 bg-cacao shadow-[0_0_42px_rgba(205,159,101,0.44)]" />
+            </div>
+          ) : null}
+          <SceneReveal className="section-shell relative z-10 grid min-w-0 items-center gap-6 lg:grid-cols-[1fr_0.78fr]">
+            <div
               className={
                 index === 1
-                  ? "scene-item scene-item--left order-first aspect-[4/3] w-full rounded-2xl object-cover shadow-cinematic lg:order-first"
-                  : "scene-item scene-item--right order-first aspect-[4/3] w-full rounded-2xl object-cover shadow-cinematic lg:order-last lg:self-end"
+                  ? "scene-item scene-item--left relative order-first aspect-[4/3] w-full overflow-hidden lg:order-first"
+                  : "scene-item scene-item--right relative order-first aspect-[4/3] w-full overflow-hidden lg:order-last lg:self-end"
               }
-              src={programImages[index]}
               style={{ transitionDelay: "0.12s" }}
-            />
-            <div className={index === 1 ? "min-w-0 lg:order-last" : "min-w-0 lg:order-first"}>
-              <p
+            >
+              <img
+                alt=""
+                className="h-full w-full object-cover opacity-[0.94]"
+                src={programImages[index]}
+              />
+              <div className="absolute inset-0 bg-[rgba(20,4,6,0.2)]" />
+              <div
                 className={
                   index === 1
-                    ? "scene-item text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux"
-                    : "eyebrow scene-item"
+                    ? "absolute inset-0 bg-[linear-gradient(to_right,#240808_0%,rgba(36,8,8,0.78)_12%,rgba(36,8,8,0.18)_30%,transparent_48%,rgba(36,8,8,0.18)_68%,rgba(36,8,8,0.78)_88%,#240808_100%)]"
+                    : "absolute inset-0 bg-[linear-gradient(to_left,#240808_0%,rgba(36,8,8,0.78)_12%,rgba(36,8,8,0.18)_30%,transparent_48%,rgba(36,8,8,0.18)_68%,rgba(36,8,8,0.78)_88%,#240808_100%)]"
                 }
-              >
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#240808_0%,rgba(36,8,8,0.58)_11%,rgba(36,8,8,0.12)_26%,transparent_44%,transparent_58%,rgba(36,8,8,0.32)_78%,#240808_100%)]" />
+            </div>
+            <div className={index === 1 ? "min-w-0 lg:order-last" : "min-w-0 lg:order-first"}>
+              <p className="eyebrow scene-item">
                 {item.act} · {item.date}
               </p>
               <h2
-                className={
-                  index === 1
-                    ? "scene-item mt-3 max-w-full break-words font-display text-4xl leading-[0.96] sm:text-5xl lg:whitespace-nowrap"
-                    : "scene-item mt-3 max-w-full break-words text-4xl leading-[0.96] text-bone sm:text-5xl lg:whitespace-nowrap"
-                }
+                className="scene-item mt-3 max-w-full break-words text-4xl leading-[0.96] text-bone sm:text-5xl lg:whitespace-nowrap"
                 style={{ transitionDelay: "0.2s" }}
               >
                 {item.title}
               </h2>
               <p
-                className={
-                  index === 1
-                    ? "scene-item mt-5 text-base leading-7 text-cacao/74"
-                    : "scene-item mt-5 text-base leading-7 text-bone/72"
-                }
+                className="scene-item mt-5 text-base leading-7 text-bone/72"
                 style={{ transitionDelay: "0.32s" }}
               >
                 {item.text}
@@ -341,8 +367,8 @@ export default function Home() {
                   <div
                     className={
                       index === 1
-                        ? "premium-hover scene-item scene-item--soft w-full min-w-0 overflow-hidden break-words rounded-lg border border-bordeaux/25 bg-bordeaux p-4 text-sm leading-6 text-bone shadow-ember"
-                        : "premium-hover scene-item scene-item--soft w-full min-w-0 overflow-hidden break-words rounded-lg border border-brass/25 bg-bone p-4 text-sm leading-6 text-cacao shadow-cinematic"
+                        ? "premium-hover scene-item scene-item--soft w-full min-w-0 overflow-hidden break-words rounded-lg border border-transparent bg-[#f0e6cb] p-4 text-sm leading-6 text-[#3a0d12] shadow-[0_14px_34px_rgba(0,0,0,0.22)]"
+                        : "premium-hover scene-item scene-item--soft w-full min-w-0 overflow-hidden break-words rounded-lg border border-brass/20 bg-[linear-gradient(145deg,#3a0d12_0%,#2a0b0f_48%,#180406_100%)] p-4 text-sm leading-6 text-bone shadow-[inset_0_1px_0_rgba(245,210,150,0.08),0_0_28px_rgba(205,159,101,0.08),0_18px_46px_rgba(0,0,0,0.24)]"
                     }
                     key={point}
                     style={{ transitionDelay: `${0.42 + pointIndex * 0.14}s` }}
@@ -353,6 +379,17 @@ export default function Home() {
               </div>
             </div>
           </SceneReveal>
+          {index === 2 ? (
+            <div className="section-shell relative z-10 mt-6 flex justify-center">
+              <ButtonLink
+                className="w-full sm:w-auto sm:min-w-[24rem]"
+                href="#registration"
+                variant="light"
+              >
+                Забронировать место
+              </ButtonLink>
+            </div>
+          ) : null}
         </section>
       ))}
 
@@ -460,7 +497,7 @@ export default function Home() {
             <h2 className="mt-3 font-display text-4xl leading-[0.96] sm:text-5xl">
               Александра Горева-Куртышева
             </h2>
-            <div className="mt-5 rounded-lg bg-cacao p-5 text-bone shadow-cinematic">
+            <div className="mt-5 rounded-lg bg-cacao p-5 text-bone shadow-cinematic lg:min-h-[31.5rem]">
               <p className="font-display text-3xl leading-none">
                 {speaker.name}
               </p>
@@ -482,11 +519,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[17rem] lg:mt-16">
-            <div className="absolute inset-x-6 bottom-2 h-24 rounded-full bg-bordeaux/35 blur-3xl" />
+          <div className="relative mx-auto w-full max-w-[20rem] lg:mt-[9.1rem] lg:h-[31.5rem] lg:max-w-[22rem]">
+            <div className="absolute inset-x-7 bottom-2 h-24 rounded-full bg-bordeaux/35 blur-3xl" />
             <img
               alt={speaker.imageAlt}
-              className="relative aspect-[4/5] w-full rounded-lg border border-bordeaux/20 object-cover object-top shadow-cinematic"
+              className="relative aspect-[4/5] w-full rounded-lg border border-bordeaux/20 object-cover object-top shadow-cinematic lg:h-full lg:aspect-auto"
               src={speaker.imageSrc}
             />
           </div>
