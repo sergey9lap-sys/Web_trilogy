@@ -29,12 +29,12 @@ export default function Home() {
           <img
             alt=""
             aria-hidden="true"
-            className="absolute inset-y-0 right-[-4%] h-full w-[108%] translate-y-8 object-cover object-[72%_58%] opacity-[0.84] sm:w-[92%] sm:opacity-[0.9] lg:w-[76%] lg:translate-y-12 lg:object-[76%_58%] lg:opacity-[0.92]"
+            className="absolute inset-y-0 right-[-34%] h-full w-[118%] translate-y-16 object-cover object-[82%_62%] opacity-[0.52] sm:right-[-12%] sm:w-[92%] sm:opacity-[0.78] lg:right-[-4%] lg:w-[76%] lg:translate-y-12 lg:object-[76%_58%] lg:opacity-[0.92]"
             src="/background/первый блок.jpeg?v=1"
           />
-          <div className="absolute inset-0 bg-[rgba(15,3,5,0.44)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(20,3,6,1)_0%,rgba(20,3,6,1)_24%,rgba(20,3,6,0.96)_34%,rgba(20,3,6,0.84)_44%,rgba(20,3,6,0.62)_56%,rgba(20,3,6,0.34)_70%,rgba(20,3,6,0.1)_86%,transparent_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(20,3,6,0.94)_0%,rgba(20,3,6,0.58)_10%,rgba(20,3,6,0.12)_26%,transparent_44%,transparent_50%,rgba(20,3,6,0.75)_82%,rgba(20,3,6,1)_100%)]" />
+          <div className="absolute inset-0 bg-[rgba(15,3,5,0.58)] lg:bg-[rgba(15,3,5,0.44)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(20,3,6,1)_0%,rgba(20,3,6,0.98)_38%,rgba(20,3,6,0.78)_58%,rgba(20,3,6,0.38)_78%,rgba(20,3,6,0.1)_100%)] lg:bg-[linear-gradient(to_right,rgba(20,3,6,1)_0%,rgba(20,3,6,1)_24%,rgba(20,3,6,0.96)_34%,rgba(20,3,6,0.84)_44%,rgba(20,3,6,0.62)_56%,rgba(20,3,6,0.34)_70%,rgba(20,3,6,0.1)_86%,transparent_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(20,3,6,0.98)_0%,rgba(20,3,6,0.8)_16%,rgba(20,3,6,0.24)_34%,rgba(20,3,6,0.42)_58%,rgba(20,3,6,0.88)_82%,rgba(20,3,6,1)_100%)] lg:bg-[linear-gradient(to_bottom,rgba(20,3,6,0.94)_0%,rgba(20,3,6,0.58)_10%,rgba(20,3,6,0.12)_26%,transparent_44%,transparent_50%,rgba(20,3,6,0.75)_82%,rgba(20,3,6,1)_100%)]" />
         </div>
         <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.44),transparent_28%,rgba(0,0,0,0.42)),radial-gradient(ellipse_at_center,transparent_46%,rgba(0,0,0,0.58)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 z-0 h-44 bg-gradient-to-t from-cacao via-cacao/78 to-transparent" />
