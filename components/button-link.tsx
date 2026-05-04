@@ -6,6 +6,8 @@ type ButtonLinkProps = {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "light" | "ghost";
   className?: string;
+  rel?: string;
+  target?: string;
 };
 
 export function ButtonLink({
@@ -13,6 +15,8 @@ export function ButtonLink({
   children,
   variant = "primary",
   className,
+  rel,
+  target,
 }: ButtonLinkProps) {
   return (
     <Link
@@ -28,6 +32,8 @@ export function ButtonLink({
         className,
       )}
       href={href}
+      rel={rel}
+      target={target}
     >
       {children}
     </Link>

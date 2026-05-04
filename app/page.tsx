@@ -21,6 +21,9 @@ const programImages = [
   "/background/блок масштабирование.jpg",
 ];
 
+const registrationUrl =
+  "https://agkedu.getcourse.ru/masshtabirovanie#ltBlock2227817978";
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
@@ -62,7 +65,12 @@ export default function Home() {
               >
                 Получить материалы
               </ButtonLink>
-              <ButtonLink className="hidden sm:inline-flex" href="#registration">
+              <ButtonLink
+                className="hidden sm:inline-flex"
+                href={registrationUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
                 Зарегистрироваться
               </ButtonLink>
             </div>
@@ -81,7 +89,13 @@ export default function Home() {
                 Не смотри вебинары как зритель. Стань режиссёром своих запусков.
               </p>
               <div className="scene-item mt-5 sm:hidden" style={{ transitionDelay: "0.58s" }}>
-                <ButtonLink className="min-h-14 w-full text-base" href="#registration" variant="light">
+                <ButtonLink
+                  className="min-h-14 w-full text-base"
+                  href={registrationUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                  variant="light"
+                >
                   Зарегистрироваться
                 </ButtonLink>
               </div>
@@ -92,7 +106,12 @@ export default function Home() {
                 Масштабирование”.
               </p>
               <div className="scene-item mt-9 flex flex-col gap-3 sm:flex-row" style={{ transitionDelay: "0.82s" }}>
-                <ButtonLink href="#registration" variant="light">
+                <ButtonLink
+                  href={registrationUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                  variant="light"
+                >
                   Получить сценарий успеха
                 </ButtonLink>
                 <ButtonLink href="/materials">
@@ -360,28 +379,28 @@ export default function Home() {
             <p className="scene-item mt-6 text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.15s" }}>
               Материалы приходят тогда, когда вы уже готовы их применить
             </p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {[
-                "Подключаешься к эфиру",
-                "Получаешь кодовое слово",
-                "Вводишь его на секретной странице",
-                "Открываешь артефакт и сразу внедряешь",
-              ].map((step, index) => (
-                <div
-                  className="premium-hover scene-item scene-item--soft scene-item--unlock rounded-lg border border-brass/25 bg-bone p-5 text-cacao shadow-cinematic"
-                  key={step}
-                  style={{ transitionDelay: `${0.24 + index * 0.15}s` }}
-                >
-                  <p className="font-display text-4xl text-bordeaux">
-                    {index + 1}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-cacao/75">{step}</p>
-                </div>
-              ))}
-            </div>
           </div>
           <div className="scene-item scene-item--right scene-item--glow" style={{ transitionDelay: "0.9s" }}>
             <GetCourseEmbedPlaceholder />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+            {[
+              "Подключаешься к эфиру",
+              "Получаешь кодовое слово",
+              "Вводишь его на секретной странице",
+              "Открываешь артефакт и сразу внедряешь",
+            ].map((step, index) => (
+              <div
+                className="premium-hover scene-item scene-item--soft scene-item--unlock min-h-32 rounded-lg border border-brass/25 bg-bone p-5 text-cacao shadow-cinematic"
+                key={step}
+                style={{ transitionDelay: `${0.24 + index * 0.15}s` }}
+              >
+                <p className="font-display text-4xl text-bordeaux">
+                  {index + 1}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-cacao/75">{step}</p>
+              </div>
+            ))}
           </div>
         </SceneReveal>
       </section>
@@ -518,7 +537,12 @@ export default function Home() {
             Заполните форму — и мы вышлем вам пропуск за кулисы главной премьеры сезона
           </p>
           <div className="scene-item mt-9 flex flex-col justify-center gap-3 sm:flex-row" style={{ transitionDelay: "0.55s" }}>
-            <ButtonLink href="#registration" variant="light">
+            <ButtonLink
+              href={registrationUrl}
+              rel="noreferrer"
+              target="_blank"
+              variant="light"
+            >
               Занять место в зале
             </ButtonLink>
             <ButtonLink href="/thanks">
@@ -643,7 +667,12 @@ export default function Home() {
                   <a className="transition hover:text-brass" href="#speaker">
                     Эксперт
                   </a>
-                  <a className="transition hover:text-brass" href="#registration">
+                  <a
+                    className="transition hover:text-brass"
+                    href={registrationUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     Регистрация
                   </a>
                 </div>
