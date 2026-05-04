@@ -116,23 +116,23 @@ export default function Home() {
             <div className="grid gap-3 sm:grid-cols-3 lg:max-w-[58rem]">
               {program.map((item, index) => (
                 <div
-                  className="scene-item min-h-[9.4rem] min-w-0 overflow-hidden rounded-[1.25rem] border border-brass/18 bg-bone/95 p-5 text-cacao shadow-[0_18px_56px_rgba(0,0,0,0.28)]"
+                  className="scene-item min-h-[9.4rem] min-w-0 overflow-hidden rounded-[1.25rem] border border-brass/22 bg-[#240808] p-5 text-bone shadow-[0_18px_56px_rgba(0,0,0,0.32)]"
                   key={item.act}
                   style={{ transitionDelay: `${1.04 + index * 0.16}s` }}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bordeaux text-sm font-semibold text-brass">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bone text-sm font-semibold text-bordeaux">
                       {index + 1}
                     </span>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-bordeaux">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass">
                       {item.act}
                     </p>
                   </div>
-                  <p className="mt-4 min-w-0 break-words font-display text-2xl leading-none text-cacao">
+                  <p className="mt-4 min-w-0 break-words font-display text-2xl leading-none text-bone">
                     {index === 2 ? "Масштаб" : item.title}
                   </p>
-                  <div className="mt-3 h-px w-3/4 bg-bordeaux/18" />
-                  <p className="mt-3 text-sm font-semibold text-bordeaux">
+                  <div className="mt-3 h-px w-3/4 bg-brass/24" />
+                  <p className="mt-3 text-sm font-semibold text-bone/82">
                     {item.date}
                   </p>
                 </div>
