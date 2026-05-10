@@ -2,12 +2,13 @@ import { ActCard } from "@/components/act-card";
 import { ButtonLink } from "@/components/button-link";
 import { CinematicResults } from "@/components/cinematic-results";
 import { FaqItem } from "@/components/faq-item";
+import { GetCourseEmbedPlaceholder } from "@/components/get-course-placeholder";
 import { LightLeak } from "@/components/light-leak";
 import { Reveal } from "@/components/reveal";
 import { ReviewsSlider } from "@/components/reviews-slider";
 import { SceneReveal } from "@/components/scene-reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { audience, care, faq, footer, program, registrationUrl, results, speaker, workflow } from "@/lib/content";
+import { audience, care, faq, footer, program, results, speaker, workflow } from "@/lib/content";
 
 const audienceImages = [
   "/background/мини-блок эксперт.jpg",
@@ -94,7 +95,7 @@ export default function Home() {
                   className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass"
                   style={{ transitionDelay: "0.5s" }}
                 >
-                  11 / 12 / 20 мая
+                  11 мая в 10:00 мск / 12 и 20 мая в 19:00 мск
                 </p>
                 <div
                   className="scene-item mt-6 flex flex-col gap-3 sm:flex-row lg:justify-start"
@@ -102,7 +103,7 @@ export default function Home() {
                 >
                   <ButtonLink
                     className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[20rem] lg:w-[23rem]"
-                    href={registrationUrl}
+                    href="#registration"
                     variant="light"
                   >
                     Зарегистрироваться
@@ -265,10 +266,7 @@ export default function Home() {
       <section className="bg-bone py-10 text-cacao sm:py-14">
         <div className="section-shell grid gap-6 lg:grid-cols-[1fr_0.9fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux">
-              Что внутри
-            </p>
-            <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
+            <h2 className="font-display text-4xl leading-[0.98] sm:text-5xl">
               Что разберём за три дня
             </h2>
           </div>
@@ -361,7 +359,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-6 flex justify-center">
-            <ButtonLink className="w-full sm:w-auto sm:min-w-[24rem]" href={registrationUrl} variant="light">
+            <ButtonLink className="w-full sm:w-auto sm:min-w-[24rem]" href="#registration" variant="light">
               Зарегистрироваться на практикум
             </ButtonLink>
           </div>
@@ -440,7 +438,7 @@ export default function Home() {
             <div className="section-shell relative z-10 mt-6 flex justify-center">
               <ButtonLink
                 className="w-full sm:w-auto sm:min-w-[24rem]"
-                href={registrationUrl}
+                href="#registration"
                 variant="light"
               >
                 Забронировать место
@@ -475,22 +473,8 @@ export default function Home() {
               Оставьте заявку — и мы пришлём доступ к бесплатному практикуму.
             </p>
           </div>
-          <div className="scene-item scene-item--right soft-panel rounded-lg p-5 text-center sm:p-7 lg:text-left" style={{ transitionDelay: "0.55s" }}>
-            <p className="eyebrow">Доступ</p>
-            <h3 className="mt-3 text-3xl leading-tight text-bone">
-              Регистрация на практикум
-            </h3>
-            <p className="mt-4 text-sm leading-6 text-bone/70">
-              Перейдите на страницу регистрации, оставьте контакты и получите
-              доступ к эфиру 11 мая.
-            </p>
-            <ButtonLink
-              className="mt-6 w-full min-w-0 px-8 sm:min-w-0"
-              href={registrationUrl}
-              variant="light"
-            >
-              Перейти к регистрации
-            </ButtonLink>
+          <div className="scene-item scene-item--right" style={{ transitionDelay: "0.55s" }}>
+            <GetCourseEmbedPlaceholder />
           </div>
         </SceneReveal>
       </section>
@@ -507,14 +491,8 @@ export default function Home() {
               Александра Горева-Куртышева
             </h2>
             <div className="mt-5 rounded-lg bg-cacao p-5 text-bone shadow-cinematic lg:min-h-[31.5rem]">
-              <p className="font-display text-3xl leading-none">
-                {speaker.name}
-              </p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-brass">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass">
                 {speaker.role}
-              </p>
-              <p className="mt-5 text-sm leading-6 text-bone/74">
-                {speaker.description}
               </p>
               <div className="mt-5 grid gap-3">
                 {speaker.highlights.map((item) => (
@@ -560,7 +538,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-6 flex justify-center">
-            <ButtonLink href={registrationUrl} variant="light">
+            <ButtonLink href="#registration" variant="light">
               Принять участие
             </ButtonLink>
           </div>
@@ -694,7 +672,7 @@ export default function Home() {
                   </a>
                   <a
                     className="transition hover:text-brass"
-                    href={registrationUrl}
+                    href="#registration"
                   >
                     Регистрация
                   </a>

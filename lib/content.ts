@@ -6,9 +6,9 @@ export const telegramChannelUrl = "https://t.me/+Vk5DsA87wxQyZTIy";
 export const registrationUrl = "https://agkedu.getcourse.ru/masshtabirovanie";
 
 export const dates = [
-  { day: "11 мая", title: "Продукт", act: "Акт I" },
-  { day: "12 мая", title: "Продажи", act: "Акт II" },
-  { day: "20 мая", title: "Масштабирование", act: "Акт III" },
+  { day: "11 мая в 10:00 мск", title: "Продукт", act: "Акт I" },
+  { day: "12 мая в 19:00 мск", title: "Продажи", act: "Акт II" },
+  { day: "20 мая в 19:00 мск", title: "Масштабирование", act: "Акт III" },
 ];
 
 export const program = [

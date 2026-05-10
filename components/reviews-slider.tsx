@@ -44,9 +44,6 @@ export function ReviewsSlider({ images }: ReviewsSliderProps) {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               Отзывы
             </p>
-            <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
-              Что говорят участники
-            </h2>
             <p className="mt-5 text-base leading-7 text-bone/72 sm:text-lg">
               Собрали живые сообщения от тех, кто уже работал с подходом
               Александры и забирал из хаоса понятную систему.
