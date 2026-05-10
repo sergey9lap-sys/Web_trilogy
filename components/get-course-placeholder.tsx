@@ -84,15 +84,15 @@ export function GetCourseEmbedPlaceholder() {
     >
       <p className="eyebrow">Регистрация</p>
       <h3 className="mt-3 text-3xl leading-tight text-bone">
-        Бронируйте место в первом ряду
+        Забронируйте место на практикуме
       </h3>
       <p className="mt-4 text-sm leading-6 text-bone/70">
-        Заполните форму — и мы вышлем вам пропуск за кулисы главной премьеры
-        сезона: три эфира, три артефакта и система, которая изменит ваше кино.
+        Заполните форму — и мы пришлём доступ к бесплатному практикуму:
+        три эфира о продукте, продажах и масштабировании.
       </p>
       <div className="mt-6 overflow-hidden rounded-md text-cacao" ref={widgetRef} />
       <p className="mt-5 text-sm font-semibold leading-6 text-brass">
-        Разница между “знаю” и “зарабатываю” — это система. Начнём съёмки 11 мая.
+        Разница между “знаю” и “зарабатываю” — это система. Начнём 11 мая.
       </p>
     </div>
   );

@@ -12,7 +12,7 @@ type UnlockState = {
 };
 
 const dayIds: MaterialDay[] = ["day1", "day2", "day3"];
-const artifactNumbers = ["I", "II", "III"];
+const materialLabels = ["Получить материал дня 1", "Получить материал дня 2", "Получить материал дня 3"];
 
 const initialState: UnlockState = {
   code: "",
@@ -65,7 +65,7 @@ export function MaterialsUnlock() {
     const code = states[day].code.trim();
 
     if (!code) {
-      updateDay(day, { error: "Введите кодовое слово" });
+      updateDay(day, { error: "Введите код доступа" });
       return;
     }
 
@@ -87,7 +87,7 @@ export function MaterialsUnlock() {
         const message =
           data.error === "not_configured"
             ? "Материалы скоро появятся"
-            : "Неверное кодовое слово";
+            : "Неверный код доступа";
         updateDay(day, { error: message, isLoading: false });
         return;
       }
@@ -108,7 +108,7 @@ export function MaterialsUnlock() {
   return (
     <section className="section-shell py-14 sm:py-20" ref={sectionRef}>
       <img
-        alt="Кино-кадр страницы материалов"
+        alt="Материалы практикума"
         className={`materials-unlock-visual mb-8 h-[220px] w-full rounded-2xl object-cover sm:h-[280px] lg:mb-10 lg:h-[320px] ${
           isVisualVisible ? "is-visible" : ""
         }`}
@@ -118,7 +118,7 @@ export function MaterialsUnlock() {
         {program.map((item, index) => {
           const day = dayIds[index];
           const state = states[day];
-          const artifactLabel = `Получить ${artifactNumbers[index]} артефакт`;
+          const materialLabel = materialLabels[index];
 
           return (
             <article className="soft-panel rounded-lg p-5 sm:p-6" key={day}>
@@ -154,7 +154,7 @@ export function MaterialsUnlock() {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    {artifactLabel}
+                    {materialLabel}
                   </a>
                 </div>
               ) : (
@@ -163,7 +163,7 @@ export function MaterialsUnlock() {
                     className="text-sm font-semibold text-bone"
                     htmlFor={`code-${day}`}
                   >
-                    Кодовое слово
+                    Код доступа
                   </label>
                   <input
                     className="mt-3 min-h-12 w-full rounded-md border border-brass/20 bg-obsidian/50 px-4 text-base text-bone outline-none transition placeholder:text-bone/30 focus:border-brass"
@@ -188,7 +188,7 @@ export function MaterialsUnlock() {
                     onClick={() => unlock(day)}
                     type="button"
                   >
-                    {state.isLoading ? "Проверяем..." : artifactLabel}
+                    {state.isLoading ? "Проверяем..." : materialLabel}
                   </button>
                 </div>
               )}

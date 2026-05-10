@@ -2,12 +2,12 @@ import { ActCard } from "@/components/act-card";
 import { ButtonLink } from "@/components/button-link";
 import { CinematicResults } from "@/components/cinematic-results";
 import { FaqItem } from "@/components/faq-item";
-import { GetCourseEmbedPlaceholder } from "@/components/get-course-placeholder";
 import { LightLeak } from "@/components/light-leak";
 import { Reveal } from "@/components/reveal";
+import { ReviewsSlider } from "@/components/reviews-slider";
 import { SceneReveal } from "@/components/scene-reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { audience, care, faq, footer, program, results, speaker } from "@/lib/content";
+import { audience, care, faq, footer, program, registrationUrl, results, speaker, workflow } from "@/lib/content";
 
 const audienceImages = [
   "/background/мини-блок эксперт.jpg",
@@ -19,6 +19,19 @@ const programImages = [
   "/background/блок продукт.jpg",
   "/background/блок продажи.jpg",
   "/background/блок масштабирование.jpg",
+];
+
+const reviewImages = [
+  "/отзывы/IMAGE 2026-05-10 14:40:22.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:26.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:29.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:31.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:32.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:34.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:37.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:39.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:41.jpg",
+  "/отзывы/IMAGE 2026-05-10 14:40:42.jpg",
 ];
 
 export default function Home() {
@@ -50,10 +63,10 @@ export default function Home() {
                 Формат
               </a>
               <a className="transition hover:text-brass" href="#program">
-                Эфиры
+                Программа
               </a>
-              <a className="transition hover:text-brass" href="#artifacts">
-                Артефакты
+              <a className="transition hover:text-brass" href="#reviews">
+                Отзывы
               </a>
               <a className="transition hover:text-brass" href="#care">
                 Служба заботы
@@ -64,7 +77,7 @@ export default function Home() {
           <SceneReveal className="flex flex-1 flex-col justify-start gap-7 pb-8 pt-9 lg:gap-8 lg:pt-12">
             <div className="grid items-start gap-7 lg:grid-cols-[0.48fr_0.52fr]">
               <div className="flex h-full flex-col">
-                <p className="eyebrow scene-item">ПРЕМЬЕРА • 11–13 МАЯ</p>
+                <p className="eyebrow scene-item">Бесплатный практикум</p>
                 <h1
                   className="scene-item mt-4 max-w-4xl text-5xl leading-[0.92] text-bone sm:text-6xl lg:text-[5.8rem]"
                   style={{ transitionDelay: "0.18s" }}
@@ -75,13 +88,13 @@ export default function Home() {
                   className="scene-item mt-4 max-w-3xl font-display text-3xl leading-none text-bone sm:text-4xl lg:text-[2.7rem]"
                   style={{ transitionDelay: "0.34s" }}
                 >
-                  Система, где каждый кадр работает на результат
+                  Три дня, чтобы собрать систему, которая работает без вас
                 </p>
                 <p
                   className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass"
                   style={{ transitionDelay: "0.5s" }}
                 >
-                  Не смотри вебинары как зритель. Стань режиссёром своих запусков.
+                  11 / 12 / 20 мая
                 </p>
                 <div
                   className="scene-item mt-6 flex flex-col gap-3 sm:flex-row lg:justify-start"
@@ -89,7 +102,7 @@ export default function Home() {
                 >
                   <ButtonLink
                     className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[20rem] lg:w-[23rem]"
-                    href="#registration"
+                    href={registrationUrl}
                     variant="light"
                   >
                     Зарегистрироваться
@@ -105,9 +118,9 @@ export default function Home() {
                   className="scene-item mt-5 max-w-2xl text-base leading-7 text-bone/80"
                   style={{ transitionDelay: "0.82s" }}
                 >
-                  Три акта. Три инструмента силы. Вы не просто смотрите — вы
-                  создаете оружие. В конце трёх дней у вас в руках будет
-                  полностью собранная система.
+                  Перестаньте собирать запуски из кусочков. За три вечера
+                  соберёте схему «Продукт → Продажи → Масштаб», которую можно
+                  повторять без выгорания.
                 </p>
               </div>
               <div aria-hidden="true" className="hidden lg:block" />
@@ -129,7 +142,7 @@ export default function Home() {
                     </p>
                   </div>
                   <p className="mt-4 min-w-0 break-words font-display text-2xl leading-none text-bone">
-                    {index === 2 ? "Масштаб" : item.title}
+                    {item.title}
                   </p>
                   <div className="mt-3 h-px w-3/4 bg-brass/24" />
                   <p className="mt-3 text-sm font-semibold text-bone/82">
@@ -145,20 +158,22 @@ export default function Home() {
       <section className="relative overflow-hidden bg-bone py-10 text-cacao sm:py-14" id="format">
         <Reveal className="section-shell relative z-10 grid items-center gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="max-w-3xl">
-            <p className="eyebrow">Хит сезона</p>
+            <p className="eyebrow">Зачем это нужно</p>
             <h2 className="mt-4 text-4xl leading-[0.98] text-cacao sm:text-5xl">
-              Сделка — это последняя сцена. Ваша работа — написать сценарий
+              Запуск должен работать по системе, а не на вашем личном ресурсе
             </h2>
             <p className="mt-5 text-base leading-7 text-cacao/75 sm:text-lg">
-              Герой этого сценария — клиент. Вы собираете путь так, чтобы он сам захотел сыграть в финальной сцене и дойти до результата.
+              Когда продукт, продажи и масштабирование живут отдельно, каждый
+              запуск приходится собирать заново. На практикуме вы увидите, как
+              связать эти части в понятный повторяемый процесс.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Смотреть — не значит управлять",
-              "Материалы без сцены снова уходят “на потом”",
-              "Запуск без сценария превращается в хаос",
-              "Система отличает хит от случайной удачи",
+              "Меньше ручного контроля в каждом запуске",
+              "Понятная логика продукта и продаж",
+              "Команда работает по одному сценарию",
+              "Рост без постоянного аврала",
             ].map((item) => (
               <div
                 className="premium-hover flex min-h-20 items-center rounded-lg border border-brass/25 bg-[#240808] p-4 text-base font-semibold leading-6 text-bone shadow-cinematic"
@@ -176,9 +191,9 @@ export default function Home() {
           <SceneReveal className="grid gap-6">
             <div className="scene-item">
               <SectionHeading
-                eyebrow="В ролях"
-                title="В главных ролях — тот, кто устал быть статистом"
-                text="Три взгляда. Одна правда. Один запуск."
+                eyebrow="Кому это нужно"
+                title="Для тех, кто устал держать запуск на себе"
+                text="Три роли, которым нужна система вместо запуска на личном ресурсе."
               />
             </div>
             <div className="grid gap-4">
@@ -254,15 +269,15 @@ export default function Home() {
               Что внутри
             </p>
             <h2 className="mt-4 font-display text-4xl leading-[0.98] sm:text-5xl">
-              Три акта. Три ключа к власти над рынком
+              Что разберём за три дня
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Продукт как путешествие героя",
-              "Продажи как управление вниманием",
-              "Масштабирование без выгорания",
-              "Артефакты в момент действия",
+              "Продукт, который покупают",
+              "Продажи без давления и долгих созвонов",
+              "Масштаб без работы 24/7",
+              "Повторяемая система запуска",
             ].map((item) => (
               <div className="premium-hover flex min-h-20 items-center rounded-lg border border-bordeaux/25 bg-[#240808] p-4 text-base font-semibold leading-6 text-bone shadow-ember" key={item}>
                 {item}
@@ -270,6 +285,48 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-cacao py-10 sm:py-14">
+        <LightLeak
+          blur={2}
+          className="right-[-18%] top-[-10%] h-[120%] w-[130%] object-cover object-center mix-blend-screen brightness-110 contrast-110 drop-shadow-[0_0_80px_rgba(205,159,101,0.22)] lg:right-[-7%] lg:top-[4%] lg:h-[90%] lg:w-[38%]"
+          mask="left"
+          opacity={0.38}
+          parallaxX={4}
+          parallaxY={8}
+          src="/background/11 блок.jpg"
+        />
+        <SceneReveal className="section-shell relative z-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <div className="scene-item">
+              <SectionHeading
+                eyebrow="Как будем работать"
+                title="От хаоса к повторяемой схеме"
+                text="Практикум не про вдохновение на один вечер. Вы разложите запуск на понятные части и увидите, что должно быть настроено до следующего старта."
+              />
+            </div>
+            <p className="scene-item mt-6 text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.16s" }}>
+              Цель — чтобы после практикума вы понимали, с чего начать и что перестать делать вручную.
+            </p>
+          </div>
+          <div className="soft-panel rounded-lg p-4 sm:p-5">
+            <div className="grid gap-5">
+              {workflow.map((item, index) => (
+                <div
+                  className="scene-item scene-item--left flex gap-4 border-b border-brass/15 pb-5 last:border-0 last:pb-0"
+                  key={item}
+                  style={{ transitionDelay: `${0.12 + index * 0.13}s` }}
+                >
+                  <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brass text-sm font-semibold text-cacao">
+                    {index + 1}
+                  </span>
+                  <p className="text-sm leading-6 text-bone/74">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SceneReveal>
       </section>
 
       <section className="relative overflow-hidden bg-gradient-to-b from-cacao via-bordeaux/40 to-cacao py-10 sm:py-14" id="program">
@@ -284,13 +341,13 @@ export default function Home() {
         <SceneReveal className="section-shell relative z-10">
           <div className="scene-item">
             <SectionHeading
-              eyebrow="Трилогия"
-              title="Три акта. Три дня. Три инструмента"
-              text="Каждый эфир — отдельная сцена запуска. Вы проходите путь от продукта к продажам и масштабированию, открывая следующий артефакт в нужный момент."
+              eyebrow="Программа"
+              title="Расписание и темы эфиров"
+              text="За три дня разберёте связку «Продукт → Продажи → Масштаб» и увидите, какие шаги помогут запуску работать по понятной системе."
             />
           </div>
           <p className="scene-item mx-auto mt-6 max-w-2xl text-center text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.16s" }}>
-            Вы не просто смотрите — вы собираете систему, которой будете управлять
+            Каждый день — отдельный блок, который собирает запуск в управляемую систему
           </p>
           <div className="mt-7 grid gap-4 lg:grid-cols-3">
             {program.map((item, index) => (
@@ -304,8 +361,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-6 flex justify-center">
-            <ButtonLink className="w-full sm:w-auto sm:min-w-[24rem]" href="#registration" variant="light">
-              Зарегистрироваться на вебинар
+            <ButtonLink className="w-full sm:w-auto sm:min-w-[24rem]" href={registrationUrl} variant="light">
+              Зарегистрироваться на практикум
             </ButtonLink>
           </div>
         </SceneReveal>
@@ -383,7 +440,7 @@ export default function Home() {
             <div className="section-shell relative z-10 mt-6 flex justify-center">
               <ButtonLink
                 className="w-full sm:w-auto sm:min-w-[24rem]"
-                href="#registration"
+                href={registrationUrl}
                 variant="light"
               >
                 Забронировать место
@@ -395,98 +452,50 @@ export default function Home() {
 
       <CinematicResults items={results} />
 
-      <section className="relative overflow-hidden bg-cacao py-10 sm:py-14" id="artifacts">
+      <section className="relative overflow-hidden bg-cinema-radial py-10 sm:py-14" id="registration">
         <LightLeak
           blur={2}
-          className="left-[-4%] top-[18%] h-[118vw] w-[118vw] object-contain object-center brightness-110 contrast-110 lg:left-[-8%] lg:top-[-8%] lg:h-[112%] lg:w-[58%] lg:object-contain lg:object-left-top"
-          mask="right"
-          opacity={0.35}
-          parallaxX={4}
-          parallaxY={8}
-          src="/background/10 блок.jpg"
+          className="left-[-15%] top-[-16%] h-[132%] w-[130%] object-cover object-center lg:inset-x-0 lg:top-[-18%] lg:mx-auto lg:h-[138%] lg:w-[82%]"
+          mask="center"
+          opacity={0.2}
+          parallaxX={0}
+          parallaxY={0}
+          src="/background/14 блок.jpg"
         />
-        <SceneReveal className="section-shell relative z-10 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
-          <div>
-            <div className="scene-item">
-              <SectionHeading
-                eyebrow="Механика"
-                title="Секретный материал доступен только во время сеанса"
-                text="Вы не получаете всё сразу. Каждый эфир — это уровень. Внутри спрятано кодовое слово, как секретный пароль в шпионском кино. Вводите его — и открываете новый артефакт."
-              />
-            </div>
-            <p className="scene-item mt-6 text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.15s" }}>
-              Материалы приходят тогда, когда вы уже готовы их применить
+        <SceneReveal className="section-shell relative z-10 grid items-center gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="text-center lg:text-left">
+            <p className="eyebrow scene-item">Регистрация</p>
+            <h2 className="scene-item mt-3 max-w-3xl text-4xl leading-[0.96] text-bone sm:text-5xl" style={{ transitionDelay: "0.12s" }}>
+              Бронируйте место на практикуме
+            </h2>
+            <p className="scene-item mt-5 max-w-2xl text-lg leading-8 text-bone/76" style={{ transitionDelay: "0.28s" }}>
+              3 дня. 3 эфира. Система, которую можно повторять без выгорания.
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {[
-                "Подключаешься к эфиру",
-                "Получаешь кодовое слово",
-                "Вводишь его на секретной странице",
-                "Открываешь артефакт и сразу внедряешь",
-              ].map((step, index) => (
-                <div
-                  className="premium-hover scene-item scene-item--soft scene-item--unlock rounded-lg border border-brass/25 bg-bone p-4 text-cacao shadow-cinematic"
-                  key={step}
-                  style={{ transitionDelay: `${0.24 + index * 0.15}s` }}
-                >
-                  <p className="font-display text-4xl text-bordeaux">
-                    {index + 1}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-cacao/75">{step}</p>
-                </div>
-              ))}
-            </div>
+            <p className="scene-item mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.4s" }}>
+              Оставьте заявку — и мы пришлём доступ к бесплатному практикуму.
+            </p>
           </div>
-          <div className="scene-item scene-item--right scene-item--glow" style={{ transitionDelay: "0.9s" }}>
-            <GetCourseEmbedPlaceholder />
+          <div className="scene-item scene-item--right soft-panel rounded-lg p-5 text-center sm:p-7 lg:text-left" style={{ transitionDelay: "0.55s" }}>
+            <p className="eyebrow">Доступ</p>
+            <h3 className="mt-3 text-3xl leading-tight text-bone">
+              Регистрация на практикум
+            </h3>
+            <p className="mt-4 text-sm leading-6 text-bone/70">
+              Перейдите на страницу регистрации, оставьте контакты и получите
+              доступ к эфиру 11 мая.
+            </p>
+            <ButtonLink
+              className="mt-6 w-full min-w-0 px-8 sm:min-w-0"
+              href={registrationUrl}
+              variant="light"
+            >
+              Перейти к регистрации
+            </ButtonLink>
           </div>
         </SceneReveal>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-cacao to-bordeaux/55 py-10 sm:py-14">
-        <LightLeak
-          blur={2}
-          className="right-[-18%] top-[-10%] h-[120%] w-[130%] object-cover object-center mix-blend-screen brightness-110 contrast-110 drop-shadow-[0_0_80px_rgba(205,159,101,0.22)] lg:right-[-7%] lg:top-[4%] lg:h-[90%] lg:w-[38%]"
-          mask="left"
-          opacity={0.55}
-          parallaxX={4}
-          parallaxY={8}
-          src="/background/11 блок.jpg"
-        />
-        <SceneReveal className="section-shell relative z-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <div className="scene-item">
-              <SectionHeading
-                eyebrow="Почему в прямом эфире"
-                title="Магия момента работает сильнее скачанной папки"
-                text="Когда материал открывается во время эфира, у него появляется контекст. Вы понимаете, зачем он нужен, куда его применить и какой шаг сделать дальше."
-              />
-            </div>
-            <p className="scene-item mt-6 text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.16s" }}>
-              Лучше быть в кадре, чем разбирать запись “когда-нибудь потом”
-            </p>
-          </div>
-          <div className="soft-panel rounded-lg p-4 sm:p-5">
-            <div className="grid gap-5">
-              {[
-                "Кодовое слово появляется в эфире",
-                "Запись доступна 24 часа",
-                "Артефакты привязаны к прохождению",
-                "Каждый акт усиливает следующий",
-              ].map((item, index) => (
-                <div
-                  className="scene-item scene-item--left flex gap-4 border-b border-brass/15 pb-5 last:border-0 last:pb-0"
-                  key={item}
-                  style={{ transitionDelay: `${0.12 + index * 0.13}s` }}
-                >
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brass" />
-                  <p className="text-sm leading-6 text-bone/74">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </SceneReveal>
-      </section>
+      <ReviewsSlider images={reviewImages} />
 
       <section className="bg-bone py-10 text-cacao sm:py-14" id="speaker">
         <div className="section-shell grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr]">
@@ -542,7 +551,7 @@ export default function Home() {
         />
         <Reveal className="section-shell relative z-10">
           <SectionHeading
-            eyebrow="Финальные титры"
+            eyebrow="Вопросы"
             title="Коротко о важном"
           />
           <div className="mt-5">
@@ -551,44 +560,11 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-6 flex justify-center">
-            <ButtonLink href="#registration" variant="light">
+            <ButtonLink href={registrationUrl} variant="light">
               Принять участие
             </ButtonLink>
           </div>
         </Reveal>
-      </section>
-
-      <section className="relative overflow-hidden bg-cinema-radial py-10 sm:py-14">
-        <LightLeak
-          blur={2}
-          className="left-[-15%] top-[-16%] h-[132%] w-[130%] object-cover object-center lg:inset-x-0 lg:top-[-18%] lg:mx-auto lg:h-[138%] lg:w-[82%]"
-          mask="center"
-          opacity={0.2}
-          parallaxX={0}
-          parallaxY={0}
-          src="/background/14 блок.jpg"
-        />
-        <SceneReveal className="section-shell relative z-10 text-center">
-          <p className="eyebrow scene-item">Финальный трейлер</p>
-          <h2 className="scene-item mx-auto mt-3 max-w-3xl text-4xl leading-[0.96] text-bone sm:text-5xl" style={{ transitionDelay: "0.12s" }}>
-            Бронируйте место в первом ряду
-          </h2>
-          <p className="scene-item mx-auto mt-5 max-w-2xl text-lg leading-8 text-bone/76" style={{ transitionDelay: "0.28s" }}>
-            3 дня. 3 эфира. 3 артефакта. Система, которая изменит ваше кино.
-          </p>
-          <p className="scene-item mx-auto mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.4s" }}>
-            Заполните форму — и мы вышлем вам пропуск за кулисы главной премьеры сезона
-          </p>
-          <div className="scene-item mt-6 flex justify-center" style={{ transitionDelay: "0.55s" }}>
-            <ButtonLink
-              className="w-full sm:w-auto sm:min-w-[24rem]"
-              href="#registration"
-              variant="light"
-            >
-              Занять место в зале
-            </ButtonLink>
-          </div>
-        </SceneReveal>
       </section>
 
       <section className="bg-cacao py-10 sm:py-14" id="care">
@@ -651,9 +627,8 @@ export default function Home() {
               <div>
                 <p className="font-display text-3xl">Запуск 3.0</p>
                 <p className="mt-4 max-w-md text-sm leading-6 text-bone/72">
-                  3-дневная трилогия о том, как собрать систему, где каждый
-                  кадр работает на результат: продукт, продажи и
-                  масштабирование.
+                  Бесплатный практикум о том, как собрать систему запуска:
+                  продукт, продажи и масштабирование.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
@@ -682,6 +657,14 @@ export default function Home() {
                 <p className="mt-6 text-sm text-bone/70">
                   Ваш личный менеджер: на связи в Телеграм, ВКонтакте и Макс
                 </p>
+                <a
+                  className="mt-4 inline-flex min-h-11 items-center justify-center rounded-md border border-brass/50 px-4 py-2 text-sm font-semibold text-bone transition hover:bg-brass/10"
+                  href={footer.developerUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Разработка сайтов
+                </a>
                 <div className="mt-4 grid gap-2 text-sm">
                   <a className="text-brass" href={`tel:${footer.phone.replace(/[^+\d]/g, "")}`}>
                     {footer.phone}
@@ -701,14 +684,17 @@ export default function Home() {
                     Формат
                   </a>
                   <a className="transition hover:text-brass" href="#program">
-                    Эфиры
+                    Программа
+                  </a>
+                  <a className="transition hover:text-brass" href="#reviews">
+                    Отзывы
                   </a>
                   <a className="transition hover:text-brass" href="#speaker">
                     Эксперт
                   </a>
                   <a
                     className="transition hover:text-brass"
-                    href="#registration"
+                    href={registrationUrl}
                   >
                     Регистрация
                   </a>

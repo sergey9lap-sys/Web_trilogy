@@ -42,7 +42,7 @@ export function CinematicResults({ items }: CinematicResultsProps) {
     >
       <div className="section-shell">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-bordeaux">
-          Результат прохождения
+          Что заберёте
         </p>
         <div className="mt-4 flex min-w-0 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <h2
@@ -51,7 +51,7 @@ export function CinematicResults({ items }: CinematicResultsProps) {
               isVisible && "is-visible",
             )}
           >
-            Титры не появятся. Начнётся ваш блокбастер
+            После практикума у вас будет не набор идей, а понятная схема
           </h2>
           <div
             aria-hidden="true"

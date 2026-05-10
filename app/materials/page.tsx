@@ -17,13 +17,13 @@ export default function MaterialsPage() {
         <div className="absolute inset-0 z-[1] pointer-events-none bg-[linear-gradient(90deg,rgba(36,8,8,0.78)_0%,rgba(36,8,8,0.42)_48%,rgba(36,8,8,0.18)_100%)]" />
         <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(circle_at_84%_18%,rgba(179,46,51,0.28),transparent_38%)]" />
         <div className="section-shell relative z-10">
-          <p className="eyebrow">Артефакты трилогии</p>
+          <p className="eyebrow">Материалы практикума</p>
           <h1 className="mt-5 max-w-4xl text-5xl leading-[0.95] text-bone sm:text-7xl">
-            Секретные материалы открываются по кодовым словам
+            Материалы для участников практикума
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/75">
-            Подключитесь к эфиру, услышьте пароль, введите его на секретной
-            странице и откройте артефакт дня, когда он реально нужен.
+            Здесь можно получить материалы по продукту, продажам и
+            масштабированию, если у вас уже есть код доступа.
           </p>
         </div>
       </section>
