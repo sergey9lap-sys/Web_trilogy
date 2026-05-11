@@ -64,8 +64,9 @@ export function GetCourseEmbedPlaceholder() {
     script.src = widgetScriptSrc;
     script.async = true;
     script.onload = () => {
-      document.dispatchEvent(new Event(`StartWidget${widgetId}`));
-      window.requestAnimationFrame(trimWidgetFrame);
+      if (document.readyState !== "loading") {
+        document.dispatchEvent(new Event(`StartWidget${widgetId}`));
+      }
     };
 
     container.appendChild(script);
@@ -73,12 +74,13 @@ export function GetCourseEmbedPlaceholder() {
     return () => {
       observer.disconnect();
       window.removeEventListener("message", handleMessage);
+      container.innerHTML = "";
+      delete container.dataset.loaded;
     };
   }, []);
 
   return (
     <div
-      id="registration"
       className="soft-panel rounded-lg p-5 sm:p-7"
       aria-label="Регистрация на трилогию"
     >
