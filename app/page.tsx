@@ -95,7 +95,7 @@ export default function Home() {
                   className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass"
                   style={{ transitionDelay: "0.5s" }}
                 >
-                  11 мая в 10:00 мск — Лекция в записи / 12 и 19 мая в 19:00 мск
+                  11 мая в 10:00 мск — Лекция в записи / 12 и 20 мая в 19:00 мск
                 </p>
                 <div
                   className="scene-item mt-6 flex flex-col gap-3 sm:flex-row lg:justify-start"
