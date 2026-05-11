@@ -6,7 +6,7 @@ export const telegramChannelUrl = "https://t.me/+Vk5DsA87wxQyZTIy";
 export const registrationUrl = "https://agkedu.getcourse.ru/masshtabirovanie";
 
 export const dates = [
-  { day: "11 мая в 10:00 мск", title: "Продукт", act: "Акт I" },
+  { day: "11 мая в 10:00 мск · Лекция в записи", title: "Продукт", act: "Акт I" },
   { day: "12 мая в 19:00 мск", title: "Продажи", act: "Акт II" },
   { day: "20 мая в 19:00 мск", title: "Масштабирование", act: "Акт III" },
 ];
@@ -14,7 +14,7 @@ export const dates = [
 export const program = [
   {
     act: "День 1",
-    date: "11 мая в 10:00 мск",
+    date: "11 мая в 10:00 мск · Лекция в записи",
     title: "Продукт",
     text: "Как превратить знания в продукт, который покупают.",
     result:
@@ -67,7 +67,7 @@ export const faq = [
   {
     question: "Сколько длится практикум?",
     answer:
-      "Три эфира: 11 мая в 10:00 мск, 12 мая в 19:00 мск и 20 мая в 19:00 мск.",
+      "Три эфира: 11 мая в 10:00 мск — лекция в записи, 12 мая в 19:00 мск и 20 мая в 19:00 мск.",
   },
   {
     question: "Сколько стоит участие?",

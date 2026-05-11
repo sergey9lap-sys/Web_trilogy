@@ -94,7 +94,7 @@ export function GetCourseEmbedPlaceholder() {
       </p>
       <div className="mt-6 overflow-hidden rounded-md text-cacao" ref={widgetRef} />
       <p className="mt-5 text-sm font-semibold leading-6 text-brass">
-        Разница между “знаю” и “зарабатываю” — это система. Начнём 11 мая.
+        Разница между “знаю” и “зарабатываю” — это система. Лекция 11 мая уже в записи.
       </p>
     </div>
   );
