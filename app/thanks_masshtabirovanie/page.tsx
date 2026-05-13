@@ -7,16 +7,10 @@ export const metadata: Metadata = {
     "Страница подтверждения регистрации на практикум Трилогия запуска.",
 };
 
-const nextSteps = [
-  "Посмотрите рекомендованный материал перед эфиром",
-  "Вступите в Telegram-чат участников",
-  "Следите за сообщениями от команды практикума",
-];
-
 export default function ThanksMasshtabirovaniePage() {
   return (
     <main className="min-h-screen overflow-hidden bg-cacao text-bone">
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(circle_at_76%_22%,rgba(179,46,51,0.24),transparent_24rem),radial-gradient(circle_at_12%_8%,rgba(205,159,101,0.16),transparent_24rem),linear-gradient(125deg,#240808_0%,#120404_54%,#0b0808_100%)] py-8 sm:py-12">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(circle_at_76%_22%,rgba(179,46,51,0.24),transparent_24rem),radial-gradient(circle_at_12%_8%,rgba(205,159,101,0.16),transparent_24rem),linear-gradient(125deg,#240808_0%,#120404_54%,#0b0808_100%)] py-10 sm:py-14">
         <div className="absolute inset-0 z-0">
           <img
             alt=""
@@ -39,58 +33,102 @@ export default function ThanksMasshtabirovaniePage() {
             </a>
           </header>
 
-          <div className="grid min-h-[calc(100vh-6rem)] items-center gap-10 pt-20 lg:grid-cols-[0.9fr_0.65fr] lg:pt-12">
-            <div className="max-w-3xl">
-              <p className="eyebrow">Регистрация прошла успешно</p>
-              <h1 className="mt-5 text-5xl leading-[0.92] text-bone sm:text-7xl lg:text-[5.8rem]">
-                Спасибо за регистрацию
-              </h1>
-              <p className="mt-6 max-w-2xl text-xl font-semibold leading-8 text-brass sm:text-2xl">
-                Вы внутри практикума «Запуск 3.0». Осталось сделать два шага,
-                чтобы не потерять материалы и напоминания.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-4xl flex-col items-center justify-center pt-20 text-center">
+            <p className="font-display text-3xl leading-none text-brass sm:text-4xl">
+              Регистрация прошла успешно!
+            </p>
+
+            <div className="mt-8 grid w-full justify-items-center gap-7">
+              <section className="grid justify-items-center gap-5">
+                <h1 className="max-w-3xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+                  Вам доступна лекция в записи 1 дня практикума
+                  <br />
+                  «Продукт»
+                  <br />
+                  Вы можете посмотреть ее тут:
+                </h1>
                 <ButtonLink
-                  className="min-h-16 w-full min-w-0 px-8 sm:w-auto"
+                  className="min-h-16 w-full min-w-0 max-w-[28rem] px-8 uppercase sm:w-[28rem]"
                   href="https://agkedu.getcourse.ru/zapusk_produkt_rec"
                   target="_blank"
                   rel="noreferrer"
                   variant="light"
                 >
-                  Смотреть материал
+                  Смотреть запись 1 дня
                 </ButtonLink>
+              </section>
+
+              <section className="grid justify-items-center gap-5">
+                <h2 className="max-w-3xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+                  Вы можете посмотреть запись 2 дня эфира. Тема:
+                  <br />
+                  «Продажи»
+                </h2>
                 <ButtonLink
-                  className="min-h-16 w-full min-w-0 px-8 sm:w-auto"
+                  className="min-h-16 w-full min-w-0 max-w-[28rem] px-8 uppercase sm:w-[28rem]"
+                  href="https://agkedu.getcourse.ru/zapusk_prodazhi_rec"
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="light"
+                >
+                  Смотреть запись 2 дня
+                </ButtonLink>
+              </section>
+
+              <section className="grid justify-items-center gap-5">
+                <h2 className="max-w-3xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+                  Чат практикума и все общение происходит тут:
+                </h2>
+                <ButtonLink
+                  className="min-h-16 w-full min-w-0 max-w-[22rem] px-8 uppercase sm:w-[22rem]"
                   href="https://t.me/joinchat/JwOyZSefiKQ2NjBi"
                   target="_blank"
                   rel="noreferrer"
-                  variant="secondary"
+                  variant="light"
                 >
                   Попасть в чат
                 </ButtonLink>
-              </div>
+              </section>
             </div>
 
-            <aside className="rounded-lg border border-brass/24 bg-[#160506]/78 p-5 shadow-cinematic backdrop-blur sm:p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brass">
-                Что дальше
-              </p>
-              <div className="mt-5 grid gap-4">
-                {nextSteps.map((step, index) => (
-                  <div
-                    className="grid grid-cols-[2.75rem_1fr] items-center gap-4 rounded-md border border-brass/16 bg-bone/[0.04] p-4"
-                    key={step}
-                  >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-bone text-sm font-semibold text-bordeaux">
-                      {index + 1}
-                    </span>
-                    <p className="text-base font-semibold leading-6 text-bone/88">
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </aside>
+            <p className="mt-8 max-w-4xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+              Расписание вебинаров и ссылка на трансляции будет
+              <br className="hidden sm:block" />
+              продублирована вам на электронную почту
+              <br className="hidden sm:block" />
+              и продублирована в чат практикума
+            </p>
+
+            <p className="mt-8 max-w-4xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+              По всем вопросам обращайтесь в службу заботы
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-2xl font-bold uppercase text-bone sm:text-4xl">
+              <a
+                className="transition hover:text-brass"
+                href="https://vk.com/agkclub"
+                target="_blank"
+                rel="noreferrer"
+              >
+                VK
+              </a>
+              <a
+                className="transition hover:text-brass"
+                href="https://t.me/joinchat/JwOyZSefiKQ2NjBi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                TG
+              </a>
+              <a
+                className="transition hover:text-brass"
+                href="https://max.ru/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                MAX
+              </a>
+            </div>
           </div>
         </div>
       </section>
