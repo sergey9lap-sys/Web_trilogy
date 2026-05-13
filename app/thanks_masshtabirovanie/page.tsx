@@ -34,13 +34,13 @@ export default function ThanksMasshtabirovaniePage() {
           </header>
 
           <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-4xl flex-col items-center justify-center pt-20 text-center">
-            <p className="font-display text-3xl leading-none text-brass sm:text-4xl">
+            <p className="font-display text-2xl leading-none text-brass sm:text-3xl">
               Регистрация прошла успешно!
             </p>
 
             <div className="mt-8 grid w-full justify-items-center gap-7">
               <section className="grid justify-items-center gap-5">
-                <h1 className="max-w-3xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+                <h1 className="max-w-3xl text-xl font-bold uppercase leading-8 text-bone sm:text-2xl sm:leading-9">
                   Вам доступна лекция в записи 1 дня практикума
                   <br />
                   «Продукт»
@@ -49,7 +49,7 @@ export default function ThanksMasshtabirovaniePage() {
                 </h1>
                 <ButtonLink
                   className="min-h-16 w-full min-w-0 max-w-[28rem] px-8 uppercase sm:w-[28rem]"
-                  href="https://agkedu.getcourse.ru/zapusk_produkt_rec"
+                  href="https://agkedu.getcourse.ru/zapusk_produkt_rec?utm_source=gc&utm_medium=trilogy&utm_content=rec12.05.26&utm_term=spasibo"
                   target="_blank"
                   rel="noreferrer"
                   variant="light"
@@ -59,7 +59,7 @@ export default function ThanksMasshtabirovaniePage() {
               </section>
 
               <section className="grid justify-items-center gap-5">
-                <h2 className="max-w-3xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+                <h2 className="max-w-3xl text-xl font-bold uppercase leading-8 text-bone sm:text-2xl sm:leading-9">
                   Вы можете посмотреть запись 2 дня эфира. Тема:
                   <br />
                   «Продажи»
@@ -76,7 +76,7 @@ export default function ThanksMasshtabirovaniePage() {
               </section>
 
               <section className="grid justify-items-center gap-5">
-                <h2 className="max-w-3xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+                <h2 className="max-w-3xl text-xl font-bold uppercase leading-8 text-bone sm:text-2xl sm:leading-9">
                   Чат практикума и все общение происходит тут:
                 </h2>
                 <ButtonLink
@@ -91,7 +91,7 @@ export default function ThanksMasshtabirovaniePage() {
               </section>
             </div>
 
-            <p className="mt-8 max-w-4xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+            <p className="mt-8 max-w-4xl text-xl font-bold uppercase leading-8 text-bone sm:text-2xl sm:leading-9">
               Расписание вебинаров и ссылка на трансляции будет
               <br className="hidden sm:block" />
               продублирована вам на электронную почту
@@ -99,11 +99,11 @@ export default function ThanksMasshtabirovaniePage() {
               и продублирована в чат практикума
             </p>
 
-            <p className="mt-8 max-w-4xl text-2xl font-bold uppercase leading-9 text-bone sm:text-3xl sm:leading-10">
+            <p className="mt-8 max-w-4xl text-xl font-bold uppercase leading-8 text-bone sm:text-2xl sm:leading-9">
               По всем вопросам обращайтесь в службу заботы
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-2xl font-bold uppercase text-bone sm:text-4xl">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xl font-bold uppercase text-bone sm:text-3xl">
               <a
                 className="transition hover:text-brass"
                 href="https://vk.com/agkclub"
