@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ButtonLink } from "@/components/button-link";
 
 export const metadata: Metadata = {
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
 export default function ThanksMasshtabirovaniePage() {
   return (
     <main className="min-h-screen overflow-hidden bg-cacao text-bone">
+      <Script id="meta-pixel-complete-registration" strategy="afterInteractive">
+        {`
+          if (typeof fbq === 'function') {
+            fbq('track', 'CompleteRegistration');
+          }
+        `}
+      </Script>
       <section className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(circle_at_76%_22%,rgba(179,46,51,0.24),transparent_24rem),radial-gradient(circle_at_12%_8%,rgba(205,159,101,0.16),transparent_24rem),linear-gradient(125deg,#240808_0%,#120404_54%,#0b0808_100%)] py-10 sm:py-14">
         <div className="absolute inset-0 z-0">
           <img
