@@ -91,15 +91,9 @@ export default function Home() {
                 >
                   Три дня, чтобы собрать систему, которая работает без вас
                 </p>
-                <p
-                  className="scene-item mt-4 max-w-2xl text-lg font-semibold leading-7 text-brass"
-                  style={{ transitionDelay: "0.5s" }}
-                >
-                  11 мая в 10:00 мск — Лекция в записи / 12 мая в 19:00 мск — Лекция в записи / 20 мая в 10:00 мск
-                </p>
                 <div
                   className="scene-item mt-6 flex flex-col gap-3 sm:flex-row lg:justify-start"
-                  style={{ transitionDelay: "0.66s" }}
+                  style={{ transitionDelay: "0.5s" }}
                 >
                   <ButtonLink
                     className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[20rem] lg:w-[23rem]"
@@ -117,7 +111,7 @@ export default function Home() {
                 </div>
                 <p
                   className="scene-item mt-5 max-w-2xl text-base leading-7 text-bone/80"
-                  style={{ transitionDelay: "0.82s" }}
+                  style={{ transitionDelay: "0.66s" }}
                 >
                   Перестаньте собирать запуски из кусочков. За три вечера
                   соберёте схему «Продукт → Продажи → Масштаб», которую можно
@@ -464,13 +458,13 @@ export default function Home() {
           <div className="text-center lg:text-left">
             <p className="eyebrow scene-item">Регистрация</p>
             <h2 className="scene-item mt-3 max-w-3xl text-4xl leading-[0.96] text-bone sm:text-5xl" style={{ transitionDelay: "0.12s" }}>
-              Бронируйте место на практикуме
+              Регистрируйтесь и смотрите лекции в записи
             </h2>
             <p className="scene-item mt-5 max-w-2xl text-lg leading-8 text-bone/76" style={{ transitionDelay: "0.28s" }}>
-              3 дня. 3 эфира. Система, которую можно повторять без выгорания.
+              Выполняйте задания челленджа и собирайте систему запуска в своём темпе.
             </p>
             <p className="scene-item mt-5 max-w-2xl text-lg font-semibold leading-7 text-brass" style={{ transitionDelay: "0.4s" }}>
-              Оставьте заявку — и мы пришлём доступ к бесплатному практикуму.
+              Доступ открыт на 72 часа.
             </p>
           </div>
           <div className="scene-item scene-item--right" style={{ transitionDelay: "0.55s" }}>
