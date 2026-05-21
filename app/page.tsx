@@ -100,7 +100,7 @@ export default function Home() {
                     href="#registration"
                     variant="light"
                   >
-                    Зарегистрироваться
+                    Смотреть эфиры
                   </ButtonLink>
                   <ButtonLink
                     className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[17rem] lg:w-[19rem]"
@@ -354,7 +354,7 @@ export default function Home() {
           </div>
           <div className="mt-6 flex justify-center">
             <ButtonLink className="w-full sm:w-auto sm:min-w-[24rem]" href="#registration" variant="light">
-              Зарегистрироваться на практикум
+              Получить доступ к эфирам
             </ButtonLink>
           </div>
         </SceneReveal>
@@ -435,7 +435,7 @@ export default function Home() {
                 href="#registration"
                 variant="light"
               >
-                Забронировать место
+                Получить доступ к эфирам
               </ButtonLink>
             </div>
           ) : null}
