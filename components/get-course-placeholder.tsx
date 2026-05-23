@@ -1,3 +1,5 @@
+import { ButtonLink } from "@/components/button-link";
+
 export function GetCourseEmbedPlaceholder() {
   return (
     <div
@@ -15,6 +17,14 @@ export function GetCourseEmbedPlaceholder() {
       <p className="mt-5 text-lg font-semibold leading-7 text-brass">
         Доступ открыт на 72 часа.
       </p>
+      <ButtonLink
+        className="mt-6 w-full min-w-0"
+        href="#registration"
+        opensRegistrationPopup
+        variant="light"
+      >
+        Получить доступ к эфирам
+      </ButtonLink>
     </div>
   );
 }

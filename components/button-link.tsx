@@ -8,6 +8,7 @@ type ButtonLinkProps = {
   className?: string;
   rel?: string;
   target?: string;
+  opensRegistrationPopup?: boolean;
 };
 
 export function ButtonLink({
@@ -17,6 +18,7 @@ export function ButtonLink({
   className,
   rel,
   target,
+  opensRegistrationPopup = false,
 }: ButtonLinkProps) {
   return (
     <Link
@@ -34,6 +36,7 @@ export function ButtonLink({
       href={href}
       rel={rel}
       target={target}
+      data-registration-popup={opensRegistrationPopup ? "true" : undefined}
     >
       {children}
     </Link>

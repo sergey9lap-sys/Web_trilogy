@@ -4,6 +4,7 @@ import { CinematicResults } from "@/components/cinematic-results";
 import { FaqItem } from "@/components/faq-item";
 import { GetCourseEmbedPlaceholder } from "@/components/get-course-placeholder";
 import { LightLeak } from "@/components/light-leak";
+import { RegistrationPopup } from "@/components/registration-popup";
 import { Reveal } from "@/components/reveal";
 import { ReviewsSlider } from "@/components/reviews-slider";
 import { SceneReveal } from "@/components/scene-reveal";
@@ -98,6 +99,7 @@ export default function Home() {
                   <ButtonLink
                     className="min-h-16 w-full min-w-0 px-8 text-center sm:w-[20rem] lg:w-[23rem]"
                     href="#registration"
+                    opensRegistrationPopup
                     variant="light"
                   >
                     Смотреть эфиры
@@ -353,7 +355,12 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-6 flex justify-center">
-            <ButtonLink className="w-full sm:w-auto sm:min-w-[24rem]" href="#registration" variant="light">
+            <ButtonLink
+              className="w-full sm:w-auto sm:min-w-[24rem]"
+              href="#registration"
+              opensRegistrationPopup
+              variant="light"
+            >
               Получить доступ к эфирам
             </ButtonLink>
           </div>
@@ -433,6 +440,7 @@ export default function Home() {
               <ButtonLink
                 className="w-full sm:w-auto sm:min-w-[24rem]"
                 href="#registration"
+                opensRegistrationPopup
                 variant="light"
               >
                 Получить доступ к эфирам
@@ -711,6 +719,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <RegistrationPopup />
     </main>
   );
 }
